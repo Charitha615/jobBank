@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "936067467059-h7mab8uh9hl1v8ivf1jtb35eeau4u8qo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jobbank",
+            "certificate_hash": "d3ff8d9eebd67ba9cef9ea1c49492e144ec84c09"
+          }
+        },
+        {
           "client_id": "936067467059-44nmerofccv5jad6astmc8p05rb1ahaj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -1,3 +1,47 @@
 <resources>
     <string name="app_name">JobBank</string>
+    <string name="title">My Application</string>
+    <string name="RecentApplications">Recently Submitted</string>
+    <string name="positionName">Position: </string>
+    <string name="company">Hired By: </string>
+    <string name="VacancyDate">Closing Date: </string>
+    <string name="VacancyStatus">Vacancy Status: </string>
+    <string name="AddNew">Add</string>
+    <string name="Help_Support">Help and Support</string>
+
+    <string name="UserTitleg">User Dashboard</string>
+    <string name="user_profile_Txt">Profile</string>
+    <string name="user_myApplication">My Applications</string>
+    <string name="user_bookmarks">Bookmarks</string>
+    <string name="user_interestedTxt">Interested</string>
+    <string name="LogOut_txt">Log Out</string>
+
+    <string name="Title2">My Bookmarks</string>
+    <string name="Recent">Recently Bookmarked</string>
+    <string name="NeedHelp">Need Help?</string>
+
+
+    <!--newly added-->
+    <string name="edit">Edit</string>
+    <string name="delete">Remove</string>
+    <string name="view">Application Status View</string>
+    <string name="update">Update Details</string>
+    <string name="Fullname">Full Name</string>
+    <string name="id">NIC Number</string>
+    <string name="emailLabel">Email</string>
+    <string name="phoneLabel">Contact</string>
+    <string name="exLabel">Working Experience</string>
+    <string name="ageLabel">Age</string>
+    <string name="descriptionLabel">Description</string>
+    <string name="qualificationsLabel">Qualifications</string>
+    <string name="updateBtn">Update</string>
+    <string name="uName">Username</string>
+    <string name="editInfo">Edit Your Info.</string>
+    <string name="cvDetail">-You Cannot Edit the Submitted CV</string>
+
+
+    <string name="viewApp">View Application</string>
+    <string name="passInfor">-To reset the password, logout from the account and use Forgot Password link below in the login page. </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>
