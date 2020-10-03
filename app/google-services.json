@@ -15,30 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "936067467059-k2gj9gv47kbso6b0s73851aurhvj4c5n.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.jobbank",
-            "certificate_hash": "f6f515dd45d0fc779b80e4651c6e13320c0448e2"
-          }
-        },
-        {
-          "client_id": "936067467059-vf3j1c5v96tr5sbk7j27h6qe2u2ntggt.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.jobbank",
-            "certificate_hash": "a956f697fd0763b40eb94831a57037822c156e81"
-          }
-        },
-        {
-          "client_id": "936067467059-h7mab8uh9hl1v8ivf1jtb35eeau4u8qo.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.jobbank",
-            "certificate_hash": "d3ff8d9eebd67ba9cef9ea1c49492e144ec84c09"
-          }
-        },
-        {
           "client_id": "936067467059-44nmerofccv5jad6astmc8p05rb1ahaj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
         Fragment fragment;
 
-        fragment = new MessageFragment();
+        /*fragment = new MessageFragment();
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.fragment_container, fragment).addToBackStack(null);
-        ft.commit();
+        ft.commit();*/
 
     }
 }

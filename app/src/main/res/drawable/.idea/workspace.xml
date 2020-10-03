@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3fd5e80b-b0b4-47b4-a95a-ee8649b36fe5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/CompanyBookmarkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/CompanyDashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/CompanyInterestedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/CompanyProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/Company_home.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/Examine_Applicant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/List_View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/PublishVacancy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/UserDashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/User_Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/User_Account_Edit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/User_Bookmarks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/User_Interested.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/User_MyApplications.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/View_Applicants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/View_Published_Vacancies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/edit_vacancy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/view_vacancy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../activity_cv_preview.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back11.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backbig.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backbtn2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmarkg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/company.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashbord.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/document.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_baseline_add_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_baseline_arrow_back_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_baseline_remove_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_launcher_arrow_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_launcher_arrow_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/more.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nameedit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redbook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rounded_corner_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rounded_corners2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rounded_corners3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rounded_corners4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/starg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userbook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vector1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vectorman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_company_bookmarked_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_company_dashboard.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_company_home.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_company_interested_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_company_profile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_edit_vacancy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_examine__applicant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_list__view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_publish_vacancy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_user__account.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_user__account__edit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_user__bookmarks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_user__interested.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_user__my_applications.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_user_dashboard.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_view__applicants.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_view__published__vacancies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/activity_view_vacany.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/jobrequests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/singlecardhob.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/Company_login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/Company_login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/jobook_loginsign/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarkcopy.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/styles.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="drawable" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="1hrNu6EbJhqikDcXes9lTbpK0S2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../../../SDKs/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fd5e80b-b0b4-47b4-a95a-ee8649b36fe5" name="Default Changelist" comment="" />
+      <created>1600765470149</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600765470149</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600765820629">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1600765820629" />
+  </component>
+</project>

@@ -1,3 +1,154 @@
 <resources>
     <string name="app_name">JobBank</string>
+
+
+    <string name="Submit_Application_btn">Submit Application</string>
+    <string name="Upload_CV_btn">Upload CV</string>
+    <string name="Company_name">Senior Software Engineer</string>
+
+
+    <string name="Log_IN">Log In</string>
+    <string name="Sign_In_btn">Sign In</string>
+
+
+    <string name="Join_with_us">Join with us</string>
+    <string name="Already_account">Already Have an Account?</string>
+
+    <string name="App_description">Get connected with as you want to our job network</string>
+    <string name="Welcome">Welcome</string>
+    <string name="Forgot_Password">Forgot Password?</string>
+    <string name="Password">Password</string>
+    <string name="Create">Create</string>
+
+    <!--  Nimeshaa -->
+
+    <string name="JobTitle">Job Title</string>
+    <string name="ApplicantName">Sample Name Jagath</string>
+    <string name="Status">Initial Status</string>
+    <string name="AppliedDate">22-08-2020</string>
+    <string name="Phone">0778989654</string>
+    <string name="Email">Email</string>
+    <string name="Age">Age</string>
+    <string name="Experience">Experience</string>
+    <string name="Description">Description</string>
+    <string name="Qualifications">Qualifications</string>
+    <string name="SetStatus">Set Status To</string>
+
+    <string name="Company_Location">12/34B, Highlevel Rd., Nugegoda.</string>
+    <string name="Company_Phone">+94 112 987 987</string>
+    <string name="Company_Email">company.email@gmail.com</string>
+
+    <string name="display_VISION">Create economic opportunity for every member of the global workforce. </string>
+    <string name="display_MISSION">Create economic opportunity for every member of the global workforce. </string>
+
+    <string name="btn_CV">Open CV</string>
+    <string name="btn_Total">Calculate Total</string>
+    <string name="btn_Interview">Interview</string>
+    <string name="btn_Pending">Pending</string>
+    <string name="btn_Rejected">Rejected</string>
+
+    <string name="txt_Viewed">Viewed</string>
+    <string name="txt_Vacancies">Vacancies</string>
+    <string name="txt_Bookmarked">Bookmarked</string>
+    <string name="txt_Interested">Interested</string>
+
+    <string name="txt_Departments">Departments</string>
+    <string name="txt_Employees">Employees</string>
+
+    <string name="txt_VISION">Our Vision</string>
+    <string name="txt_MISSION">Our Mission</string>
+
+    <string name="Interview_List">Interview List</string>
+    <string name="Pending_List">Pending List</string>
+    <string name="Rejected_List">Rejected List</string>
+
+    <string name="btn_editprofile">Edit Profile</string>
+    <string name="txt_bookmark">Bookmarks</string>
+    <string name="txt_toprevious">Back</string>
+
+    <string name="Points">00</string>
+    <string name="txt_CompanyName">Company Name Pvt Ltd</string>
+    <string name="txt_slogan">"We care Always..!!"</string>
+
+
+    <!--  Ayeshka -->
+
+    <string name="Title">Job Title</string>
+    <string name="DescriptionText">Description</string>
+    <string name="qualificationText">Qualifications</string>
+    <string name="publishedDate">Published Date</string>
+    <string name="closingDate">Closing Date</string>
+    <string name="NumberOfApplicationsTxtBox">No Of Applications</string>
+    <string name="helpAndSupportTxt">Help and Support</string>
+    <string name="UserTitle">User Dashboard</string>
+    <string name="CompanyTitle">Company Dashboard</string>
+    <string name="publishVacancyTitle">ABC Company Pvt Ltd</string>
+    <string name="departmentTxt">Department</string>
+    <string name="years">Years Of Experience</string>
+    <string name="AgeLimitTxt">Age Limit</string>
+    <string name="JobTypeTxt">Job Type</string>
+    <string name="ApplicantTxt">Applicants</string>
+    <string name="Date_date">10 August 2020</string>
+    <string name="Number_no">12</string>
+    <string name="company_profile_Txt">Profile</string>
+    <string name="company_vacancy_Txt">Vacancies</string>
+    <string name="company_saved_Txt">Saved</string>
+    <string name="company_addVacancy_Txt">Add Vacancy</string>
+    <string name="LogOut_txt">Log Out</string>
+    <string name="edit_vacancy_title_1">Software Engineer</string>
+    <string name="publish_btn">Publish</string>
+    <string name="Save_btn">Save and Update</string>
+    <string name="preview">Preview</string>
+    <string name="user_dashboard">Profile</string>
+    <string name="user_application">My Application</string>
+    <string name="user_bookmark">Bookmarks</string>
+    <string name="user_interested">Interested</string>
+    <string name="No_of_applications">No Of Applications</string>
+    <string name="software_engineer_vacancy">Software Engineer</string>
+    <string name="viewjobs">Jobs</string>
+
+
+    <!--  Galeee -->
+
+    <string name="title">My Application</string>
+    <string name="RecentApplications">Recently Submitted</string>
+    <string name="positionName">Position: </string>
+    <string name="company">Hired By: </string>
+    <string name="VacancyDate">Closing Date: </string>
+    <string name="VacancyStatus">Vacancy Status: </string>
+    <string name="AddNew">Add</string>
+    <string name="Help_Support">Help and Support</string>
+
+    <string name="UserTitleg">User Dashboard</string>
+    <string name="user_profile_Txt">Profile</string>
+    <string name="user_myApplication">My Applications</string>
+    <string name="user_bookmarks">Bookmarks</string>
+    <string name="user_interestedTxt">Interested</string>
+    <string name="LogOut_txtg">Log Out</string>
+
+    <string name="Title2">My Bookmarks</string>
+    <string name="Recent">Recently Bookmarked</string>
+    <string name="NeedHelp">Need Help?</string>
+
+    <string name="dateex">05/08/2020</string>
+    <string name="statusExample">In progress</string>
+
+    <string name="JobTitle1">Senior Software Engineer</string>
+    <string name="JobTitle2">HR Manager</string>
+    <string name="JobTitle3">Finance Assistant</string>
+    <string name="JobTitle4">Senior Executive Manager</string>
+    <string name="JobCompany">IFS Pvt Ltd.</string>
+    <string name="JobCompany2">Sanasa Development Bank</string>
+    <string name="JobCompany3">Virtusa Pvt Ltd.</string>
+    <string name="JobCompany4">Zeebra Technologies</string>
+    <string name="JobCompany5">John Kheels Pvt Ltd.</string>
+    <string name="InterestedTitle">Interested List</string>
+    <string name="Username">Username</string>
+    <string name="Emailg">sample@gmail.com</string>
+    <string name="Logout">Logout</string>
+    <string name="password">*******</string>
+    <string name="Newpassword">New Password</string>
+    <string name="Confirmpassword">Confirm Password</string>
+    <string name="title5Edit">Edit Your Info.</string>
+    <string name="edit">Edit</string>
 </resources>

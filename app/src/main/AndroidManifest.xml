@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        //<activity android:name=".view_vacancy"></activity>
+        <activity android:name=".view_published_vacancies" />
+        <activity android:name=".publish_a_vacancy" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".edit_vacancy">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

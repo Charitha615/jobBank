@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        /*setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/e/2PACX-1vRFNHkWzszqGlAiGlNlMTPe8oFOTly_xLNY2Hcu3PQ5BH9QmTXOM_zOom74Y8jr_JVgnyysugVGSi8J/pub")));
             }
-        });
+        });*/
 
 
     }
