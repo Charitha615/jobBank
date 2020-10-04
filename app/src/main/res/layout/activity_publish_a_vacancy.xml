@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -54,21 +50,21 @@
             android:textAlignment="center"/>
     </LinearLayout>-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView19"-->
-<!--        style="@style/job_main_title"-->
-<!--        android:layout_width="409dp"-->
-<!--        android:layout_height="680dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerVertical="true"-->
-<!--        android:layout_marginStart="2dp"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:layout_marginEnd="-1dp"-->
-<!--        android:layout_marginBottom="5dp"-->
-<!--        android:text="@string/publishVacancyTitle"-->
-<!--        android:textAlignment="center" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView19"-->
+    <!--        style="@style/job_main_title"-->
+    <!--        android:layout_width="409dp"-->
+    <!--        android:layout_height="680dp"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_centerVertical="true"-->
+    <!--        android:layout_marginStart="2dp"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:layout_marginEnd="-1dp"-->
+    <!--        android:layout_marginBottom="5dp"-->
+    <!--        android:text="@string/publishVacancyTitle"-->
+    <!--        android:textAlignment="center" />-->
 
     <TextView
         android:id="@+id/companyName"
@@ -109,9 +105,9 @@
         android:layout_below="@+id/editCompanyName"
         android:layout_alignParentRight="true"
         android:layout_marginStart="-27dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/jobTitle"
         android:background="@drawable/rounded_corners2"
         android:inputType="textPersonName"
@@ -133,9 +129,9 @@
         android:layout_below="@+id/editJobTitle"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="-6dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="14dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/description"
         android:background="@drawable/rounded_corners2"
         android:text="" />
@@ -157,7 +153,7 @@
         android:layout_marginStart="-17dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/Qualification"
         android:background="@drawable/rounded_corners2"
         android:text=""/>
@@ -166,7 +162,7 @@
         android:id="@+id/department"
         style="@style/text_in_vacancy_pages"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="305dp"
         android:layout_marginEnd="92dp"
         android:text="@string/departmentTxt"/>
 
@@ -177,9 +173,9 @@
         android:layout_below="@+id/QualificationEditText"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="-22dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/department"
         android:background="@drawable/rounded_corners2"
         android:ems="10"
@@ -191,7 +187,7 @@
         style="@style/text_in_vacancy_pages"
         android:layout_alignParentStart="true"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="366dp"
+        android:layout_marginTop="345dp"
         android:layout_marginEnd="20dp"
         android:text="@string/years"/>
 
@@ -201,9 +197,9 @@
         android:layout_height="40dp"
         android:layout_below="@+id/departmentEdit"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/yearsOfEx"
         android:background="@drawable/rounded_corners2"
         android:ems="10"
@@ -216,7 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="406dp"
+        android:layout_marginTop="378dp"
         android:layout_marginEnd="10dp"
         android:text="@string/AgeLimitTxt" />
 
@@ -227,9 +223,9 @@
         android:layout_below="@+id/yearsOfExEdit"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="70dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/ageLimitView"
         android:background="@drawable/rounded_corners2"
         android:ems="10"
@@ -239,7 +235,7 @@
         android:id="@+id/jobType"
         style="@style/text_in_vacancy_pages"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="454dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="107dp"
         android:text="@string/JobTypeTxt"/>
 
@@ -250,9 +246,9 @@
         android:layout_below="@+id/ageLimit"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="-15dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/jobType"
         android:background="@drawable/rounded_corners2"
         android:ems="10"
@@ -263,7 +259,7 @@
         android:id="@+id/closingDate"
         style="@style/text_in_vacancy_pages"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="505dp"
+        android:layout_marginTop="460dp"
         android:layout_marginEnd="85dp"
         android:text="@string/closingDate" />
 
@@ -274,30 +270,51 @@
         android:layout_below="@+id/jobTypeEdit"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="-15dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/closingDate"
         android:background="@drawable/rounded_corners2"
         android:ems="10"
         android:inputType="date" />
 
+    <TextView
+        android:id="@+id/verifycompany"
+        style="@style/text_in_vacancy_pages"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="510dp"
+        android:layout_marginEnd="85dp"
+        android:text="Vacancy ID" />
+
+    <EditText
+        android:id="@+id/editVacancyID"
+        android:layout_width="319dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/editClosingDate"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-15dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/closingDate"
+        android:background="@drawable/rounded_corners2"
+        android:ems="10" />
+
     <Button
         android:id="@+id/publishBtn"
         style="@style/vacancy_mini_btns"
         android:layout_width="200dp"
-        android:layout_height="81dp"
-        android:layout_below="@+id/editClosingDate"
+        android:layout_height="21dp"
+        android:layout_below="@+id/editVacancyID"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/rounded_corners"
         android:text="@string/publish_btn"
         app:layout_constraintVertical_bias="0.959" />
 
 
 </RelativeLayout>
-</ScrollView>

@@ -70,13 +70,7 @@
 //        void onClick(View v, int position);
 //    }
 //}
-
-
-
-
-
 package com.example.jobbank;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,8 +84,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.jobbank.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-
-
 public class myadapter extends FirebaseRecyclerAdapter<pubVacancy,myadapter.myviewholder> {
     private RecyclerViewClickListener listener;
 
@@ -99,26 +91,19 @@ public class myadapter extends FirebaseRecyclerAdapter<pubVacancy,myadapter.myvi
         super(options);
         this.listener = listener;
     }
-
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull pubVacancy ModelP) {
 
         holder.jobTitle.setText(ModelP.getJobTitle());
         holder.closingD.setText(ModelP.getClosingDate());
-//        holder.publishedD.setText(ModelP.getPublishedDate());
-//        holder.description.setText(ModelP.getDescription());
-//        holder.qualification.setText(ModelP.getQualification());
-
-
+        holder.publishedD.setText(ModelP.getPublishedDate());
     }
-
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_card_publish_vacancy,parent,false);
         return new myviewholder(view);
     }
-
     public class myviewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView jobTitle, closingD, publishedD;
@@ -139,11 +124,7 @@ public class myadapter extends FirebaseRecyclerAdapter<pubVacancy,myadapter.myvi
         }
 
     }
-//    @Override
-//
-//    public int getItemCount() {
-//        return super.getItemCount();
-//    }
+
     public interface RecyclerViewClickListener{
         void onClick(View v,int position);
     }
