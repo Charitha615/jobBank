@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".user_home">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +25,7 @@
         <activity android:name=".company_bookmarked_list" />
         <activity android:name=".company_interested_list" />
         <activity android:name=".edit_vacancy" />
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".user_home" />
         <activity android:name=".view_vacancy" />
         <activity android:name=".view_published_vacancies" />
         <activity android:name=".examine_applicants" />

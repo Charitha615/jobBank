@@ -47,7 +47,6 @@ public class myadapter_view_applicant extends FirebaseRecyclerAdapter <model_vie
         @Override
         public void onClick(View view) {
             listener.onClick(view, getAdapterPosition());
-
         }
 
     }

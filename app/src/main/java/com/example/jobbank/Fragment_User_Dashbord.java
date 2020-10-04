@@ -67,10 +67,12 @@ public class Fragment_User_Dashbord extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment__user__dashbord, container, false);
-       /*
+/*
         View rootView= inflater.inflate(R.layout.fragment_company_dashbord, container, false);
         my_application_inten = new Intent(getActivity(), my.class);
         final Button save = (Button) rootView.findViewById(R.id.bookmark_btn9);*/
+
+
 
 
     }

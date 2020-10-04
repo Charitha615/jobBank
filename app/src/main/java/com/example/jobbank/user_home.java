@@ -33,7 +33,6 @@ public class user_home extends AppCompatActivity {
     my_adapter_home.RecyclerViewClickListener listener;
     RecyclerView recyclerView;
     SearchView searchView;
-    String frag = "No";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +43,6 @@ public class user_home extends AppCompatActivity {
         my_app = findViewById(R.id.my_application_nav);
         home = findViewById(R.id.home_btn);
         Paper.init(this);
-
-
         Fragment fragment;
         fragment = new Fragment_Home();
         FragmentManager fm = getSupportFragmentManager();
