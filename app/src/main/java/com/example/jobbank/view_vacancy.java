@@ -40,7 +40,7 @@ public class view_vacancy extends AppCompatActivity {
         setContentView(R.layout.activity_view_vacancy);
 
 
-        Intent i =getIntent();
+        Intent i = getIntent();
         String description_ = i.getStringExtra("DESCRIPTION");
         String qualificcation_ = i.getStringExtra("QUALIFICATION");
         String closing_Date = i.getStringExtra("CLOSING_DATE");
