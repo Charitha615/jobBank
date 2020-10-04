@@ -1,3 +1,4 @@
+
 package com.example.jobbank;
 
 import androidx.annotation.NonNull;
@@ -27,7 +28,7 @@ public class view_vacancy extends AppCompatActivity {
     Button PublishedID;
     Button close, edit, viewList, examine;
     TextView description, qualification, closingDate;
-    TextView jobTitle,pub_date_textView, vac_ID;
+    TextView jobTitle,pub_date_textView;
     DatabaseReference dbRef;
     //ViewVacancy std;
 
@@ -46,7 +47,6 @@ public class view_vacancy extends AppCompatActivity {
         String publishedDate = i.getStringExtra("DESCRIPTION");
         final String jobtitle = i.getStringExtra("JOB_TITLE");
         String pub_date = i.getStringExtra("PUBLISHED_DATE");
-        String vID = i.getStringExtra("VACANCY_ID");
 
 //        jobTitle = findViewById(R.id.Jobheading2);
 //        description = (EditText) findViewById(R.id.multilineDescription2);
@@ -60,7 +60,6 @@ public class view_vacancy extends AppCompatActivity {
         qualification = findViewById(R.id.QualificationEditText2);
         closingDate = findViewById(R.id.closingDateEdit);
         pub_date_textView = findViewById(R.id.publishedDateEdit);
-        //vac_ID = findViewById(R.id.editVacancyID);
 
         close =(Button) findViewById(R.id.closebtn);
         edit = (Button) findViewById(R.id.editBtn);
@@ -72,7 +71,6 @@ public class view_vacancy extends AppCompatActivity {
         qualification.setText(String.valueOf(qualificcation_));
         closingDate.setText(String.valueOf(closing_Date));
         pub_date_textView.setText(String.valueOf(pub_date));
-        //vac_ID.setText(String.valueOf(vID));
 
         final String finalJobTitle = jobTitle.getText().toString().trim();
 

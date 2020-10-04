@@ -1,4 +1,5 @@
 package com.example.jobbank;
+
 public class pubVacancy {
     private String jobTitle;
     private String description;
@@ -12,12 +13,12 @@ public class pubVacancy {
     private String CompanyName;
     //private String CompanyAddress;
     private String CompanyLogo;
-    private String VacancyId;
+
     public pubVacancy(){
 
     }
 
-    public pubVacancy(String jobTitle, String description, String qualification, String department, String yrsOfExp, String ageLimit, String jobType, String closingDate, String publishedDate, String CompanyName, String publishedID, String CompanyLogo, String VacancyId) {
+    public pubVacancy(String jobTitle, String description, String qualification, String department, String yrsOfExp, String ageLimit, String jobType, String closingDate, String publishedDate, String CompanyName, String publishedID, String CompanyLogo) {
         this.jobTitle = jobTitle;
         this.description = description;
         this.qualification = qualification;
@@ -31,7 +32,6 @@ public class pubVacancy {
         this.publishedID = publishedID;
         //this.CompanyAddress = CompanyAddress;
         this.CompanyLogo = CompanyLogo;
-        this.VacancyId = VacancyId;
     }
 
     public String getPublishedDate() {
@@ -114,12 +114,14 @@ public class pubVacancy {
         CompanyName = companyName;
     }
 
-    //    public String getCompanyAddress() {
+//    public String getCompanyAddress() {
 //        return CompanyAddress;
 //    }
+
 //    public void setCompanyAddress(String companyAddress) {
 //        CompanyAddress = companyAddress;
 //    }
+
     public String getCompanyLogo() {
         return CompanyLogo;
     }
@@ -136,13 +138,6 @@ public class pubVacancy {
         this.publishedID = publishedID;
     }
 
-    public String getVacancyId() {
-        return VacancyId;
-    }
-
-    public void setVacancyId(String vacancyId) {
-        VacancyId = vacancyId;
-    }
 
     //    public String getCompanyID() {
 //        return CompanyID;
