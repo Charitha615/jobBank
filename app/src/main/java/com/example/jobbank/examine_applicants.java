@@ -1,11 +1,13 @@
 package com.example.jobbank;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
@@ -104,7 +106,6 @@ public class examine_applicants extends AppCompatActivity {
             }
         });
 
-        //int total = 0;
         btn_calc_tot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,6 +159,7 @@ public class examine_applicants extends AppCompatActivity {
                     clearBox();
 
                     Intent intent = new Intent(getApplicationContext(), view_applicant.class);
+                    intent.putExtra("TITLE",in_jobtitle.getText().toString());
                     startActivity(intent);
                 }
             }
@@ -165,19 +167,28 @@ public class examine_applicants extends AppCompatActivity {
 
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                dbref = FirebaseDatabase.getInstance().getReference("User_Req_Job/" + nicp);
-                dbref.removeValue();
+            public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(), "Successfully deleted", Toast.LENGTH_SHORT).show();
-                clearBox();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(examine_applicants.this);
+                builder.setMessage("Do you really want to REMOVE this applicant?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
 
-                Intent intent = new Intent(getApplicationContext(), view_applicant.class);
-                startActivity(intent);
+                                    dbref = FirebaseDatabase.getInstance().getReference("User_Req_Job/" + nicp);
+                                    dbref.removeValue();
+                                    Toast.makeText(getApplicationContext(), "Successfully Deleted", Toast.LENGTH_LONG).show();
+
+                                    Intent inte = new Intent(getApplicationContext(), view_applicant.class);
+                                    startActivity(inte);
+                            }
+                        })
+                        .setNegativeButton("Cancel", null);
+
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
-
-
     }
 
     private void clearBox()
@@ -187,7 +198,6 @@ public class examine_applicants extends AppCompatActivity {
         in_marks3.setText("");
         in_marks4.setText("");
         in_totalMarks.setText("");
-
     }
 
     public void downloadCV(){
@@ -197,20 +207,15 @@ public class examine_applicants extends AppCompatActivity {
         ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                //Log.e("Test", "success!");
                 String url = uri.toString();
                 downloadFiles(examine_applicants.this, nicp, DIRECTORY_DOWNLOADS,url);
                 Toast.makeText(getApplicationContext(), "File Downloaded", Toast.LENGTH_SHORT).show();
-                //showPdf();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                //Log.e("Test", "fail !" );
             }
         });
-
-
     }
 
     public long downloadFiles(Context context, String fileName, String destinationDirectory, String url) {
@@ -221,19 +226,5 @@ public class examine_applicants extends AppCompatActivity {
         request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName);
         return downloadmanager.enqueue(request);
     }
-
-    /*public void showPdf() {
-        try {
-            File file = new File(DIRECTORY_DOWNLOADS +"/"+ nicp + ".pdf");
-            Intent testIntent = new Intent("com.adobe.reader");
-            testIntent.setType("application/pdf");
-            testIntent.setAction(Intent.ACTION_VIEW);
-            Uri uri = Uri.fromFile(file);
-            testIntent.setDataAndType(uri, "application/pdf");
-            startActivity(testIntent);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
 
 }

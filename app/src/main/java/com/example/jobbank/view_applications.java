@@ -38,6 +38,12 @@ public class view_applications extends AppCompatActivity {
         String close = i.getStringExtra("cDate");
         String stts = i.getStringExtra("vStatus");
 
+
+        in_position.setText(String.valueOf(pos));
+        in_company.setText(String.valueOf(com));
+        in_closing.setText(String.valueOf(close));
+        in_stts.setText(String.valueOf(stts));
+
         final String fname = i.getStringExtra("fName");
         final String NIC = i.getStringExtra("nic");
         final String email = i.getStringExtra("emailVal");
@@ -48,14 +54,18 @@ public class view_applications extends AppCompatActivity {
         final String des = i.getStringExtra("desVal");
         final String qua = i.getStringExtra("quaVal");
 
-        in_position.setText(String.valueOf(pos));
-        in_company.setText(String.valueOf(com));
-        in_closing.setText(String.valueOf(close));
-        in_stts.setText(String.valueOf(stts));
 
         if (!stts.equals("Initial")){
             btn_view.setEnabled(false);
         }
+
+        img_back1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         btn_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,12 +86,6 @@ public class view_applications extends AppCompatActivity {
             }
         });
 
-        img_back1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
     }
 }

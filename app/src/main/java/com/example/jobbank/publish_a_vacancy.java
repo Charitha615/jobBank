@@ -3,7 +3,6 @@ package com.example.jobbank;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,12 +29,11 @@ import java.util.Random;
 public class publish_a_vacancy extends AppCompatActivity {
 
     //Declaring
-    EditText  description, qualification, department, yearsOfExp, ageLimit, jobType, closingDate, jobTitle, companyName, vacancyid;
+    EditText  description, qualification, department, yearsOfExp, ageLimit, jobType, closingDate, jobTitle, companyName;
     Button publishBtn;
     DatabaseReference dbRef;
     pubVacancy std;
     private FirebaseUser publishedID;
-    private FirebaseAuth Login_Company;
     ImageView back;
 
     //pubVacancy vacancyNo;
@@ -48,7 +45,6 @@ public class publish_a_vacancy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish_a_vacancy);
-        Login_Company = FirebaseAuth.getInstance();
 
         companyName = (EditText) findViewById(R.id.editCompanyName);
         jobTitle =(EditText)findViewById(R.id.editJobTitle);
@@ -59,7 +55,6 @@ public class publish_a_vacancy extends AppCompatActivity {
         ageLimit =(EditText) findViewById(R.id.ageLimit);
         jobType =(EditText) findViewById(R.id.jobTypeEdit);
         closingDate = (EditText)findViewById(R.id.editClosingDate);
-        vacancyid = (EditText)findViewById(R.id.editVacancyID);
         back = findViewById(R.id.back_imageView);
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -110,8 +105,8 @@ public class publish_a_vacancy extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Error in Job Type",Toast.LENGTH_LONG).show();
                     else if(TextUtils.isEmpty(closingDate.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Error in Closing Date",Toast.LENGTH_LONG).show();
-                    else if(TextUtils.isEmpty(vacancyid.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Error in Closing Date",Toast.LENGTH_LONG).show();
+
+
                     else
                     {
                         pubVacancy_.setJobTitle(jobTitle.getText().toString().trim()); //Trim is Remove the Spaces in text fields
@@ -123,14 +118,15 @@ public class publish_a_vacancy extends AppCompatActivity {
                         pubVacancy_.setJobType(jobType.getText().toString().trim()); //Trim is Remove the Spaces in text fields
                         pubVacancy_.setClosingDate(closingDate.getText().toString().trim());
                         pubVacancy_.setCompanyName(companyName.getText().toString().trim());
-                        pubVacancy_.setVacaincyid(vacancyid.getText().toString().trim());
                         //pubVacancy_.setCompanyAddress("");
                         pubVacancy_.setPublishedDate(pubdate);
-                        //int random = new Random().nextInt(1000000);
-                        //pubVacancy_.setPublishedID((String.valueOf(random)));
+                        pubVacancy_.setPublishedID(String.valueOf(pubVacancy_));
                         //dbRef.child(jobTitle.getText().toString().trim()).setValue(std);
-                        //dbRef.push().setValue(pubVacancy_);
-                        dbRef.child(vacancyid.getText().toString().trim()).setValue(pubVacancy_);
+                        dbRef.push().setValue(pubVacancy_);
+
+
+
+
                         Toast.makeText(getApplicationContext(),"Successfully Inserted",Toast.LENGTH_SHORT).show();
                         clearBox();
 
@@ -139,8 +135,6 @@ public class publish_a_vacancy extends AppCompatActivity {
                 catch (NumberFormatException ex){
                     Toast.makeText(getApplicationContext(),"Error Publishing Vacancy",Toast.LENGTH_SHORT).show();
                 }
-                Intent i = new Intent(getApplicationContext(),view_published_vacancies.class);
-                startActivity(i);
             }
 
 
@@ -155,7 +149,6 @@ public class publish_a_vacancy extends AppCompatActivity {
                 ageLimit.setText("");
                 jobType.setText("");
                 closingDate.setText("");
-                vacancyid.setText("");
             }
 
 

@@ -62,7 +62,6 @@ public class view_published_vacancies extends AppCompatActivity {
                 i.putExtra("JOB_TITLE", options.getSnapshots().get(position).getJobTitle());
                 i.putExtra("CLOSING_DATE", options.getSnapshots().get(position).getClosingDate());
                 i.putExtra("PUBLISHED_DATE", options.getSnapshots().get(position).getPublishedDate());
-                i.putExtra("VACANCY_ID", options.getSnapshots().get(position).getVacaincyid());
 
                 startActivity(i);
             }

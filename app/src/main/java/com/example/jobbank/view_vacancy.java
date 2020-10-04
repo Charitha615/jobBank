@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,14 +40,13 @@ public class view_vacancy extends AppCompatActivity {
         setContentView(R.layout.activity_view_vacancy);
 
 
-        Intent i = getIntent();
+        Intent i =getIntent();
         String description_ = i.getStringExtra("DESCRIPTION");
         String qualificcation_ = i.getStringExtra("QUALIFICATION");
         String closing_Date = i.getStringExtra("CLOSING_DATE");
         String publishedDate = i.getStringExtra("DESCRIPTION");
         final String jobtitle = i.getStringExtra("JOB_TITLE");
         String pub_date = i.getStringExtra("PUBLISHED_DATE");
-        final String vacid = i.getStringExtra("VACANCY_ID");
 
 //        jobTitle = findViewById(R.id.Jobheading2);
 //        description = (EditText) findViewById(R.id.multilineDescription2);
@@ -109,32 +107,37 @@ public class view_vacancy extends AppCompatActivity {
         });
 
 
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                final AlertDialog.Builder builder = new AlertDialog.Builder(view_vacancy.this);
-                builder.setMessage("Do you really want to DELETE the application?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                    dbRef = FirebaseDatabase.getInstance().getReference("PublishVacancy/" + vacid);
-                                    dbRef.removeValue();
-                                    Log.e("Test", "success!");
-                                    Log.e("Test", vacid);
-                                    Toast.makeText(getApplicationContext(), "Successfully Deleted", Toast.LENGTH_LONG).show();
-
-                                    Intent inte = new Intent(getApplicationContext(), view_published_vacancies.class);
-                                    startActivity(inte);
-                            }
-                        })
-                        .setNegativeButton("Cancel", null);
-
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
-
+//
+//        close.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                final AlertDialog.Builder builder = new AlertDialog.Builder(view_vacancy.this);
+//                builder.setMessage("Do you really want to DELETE the application?")
+//                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialogInterface, int i) {
+//
+//                                if (TextUtils.isEmpty(in_id.getText().toString()))
+//                                    Toast.makeText(getApplicationContext(), "Check You Name", Toast.LENGTH_LONG).show();
+//
+//                                else {
+//                                    dbRef = FirebaseDatabase.getInstance().getReference("User_Req_Job/" + in_id.getText().toString().trim());
+//                                    dbRef.removeValue();
+//                                    Toast.makeText(getApplicationContext(), "Successfully Deleted", Toast.LENGTH_LONG).show();
+//
+//                                    Intent inte = new Intent(getApplicationContext(), testMain.class);
+//                                    startActivity(inte);
+//                                }
+//                            }
+//                        })
+//                        .setNegativeButton("Cancel", null);
+//
+//                AlertDialog alert = builder.create();
+//                alert.show();
+//            }
+//        });
+//
 
 
 //////////////////////////////////////////////

@@ -11,7 +11,6 @@ public class pubVacancy {
     private String closingDate,publishedDate;
     private String publishedID;
     private String CompanyName;
-    private String vacaincyid;
     //private String CompanyAddress;
     private String CompanyLogo;
 
@@ -19,7 +18,7 @@ public class pubVacancy {
 
     }
 
-    public pubVacancy(String jobTitle, String description, String qualification, String department, String yrsOfExp, String ageLimit, String jobType, String closingDate, String publishedDate, String CompanyName, String publishedID, String CompanyLogo, String vacaincyid) {
+    public pubVacancy(String jobTitle, String description, String qualification, String department, String yrsOfExp, String ageLimit, String jobType, String closingDate, String publishedDate, String CompanyName, String publishedID, String CompanyLogo) {
         this.jobTitle = jobTitle;
         this.description = description;
         this.qualification = qualification;
@@ -33,15 +32,6 @@ public class pubVacancy {
         this.publishedID = publishedID;
         //this.CompanyAddress = CompanyAddress;
         this.CompanyLogo = CompanyLogo;
-        this.vacaincyid = vacaincyid;
-    }
-
-    public String getVacaincyid() {
-        return vacaincyid;
-    }
-
-    public void setVacaincyid(String vacaincyid) {
-        this.vacaincyid = vacaincyid;
     }
 
     public String getPublishedDate() {
