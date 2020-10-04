@@ -7,15 +7,26 @@
     tools:context=".view_list"
     android:background="@drawable/background_img"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/job_title14"
+
+    <RelativeLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="@string/JobTitle"
-        android:layout_marginTop="10dp"
-        style="@style/buttons2_examine_applicants"
-        android:textSize="30sp" />
+        android:layout_height="70dp"
+        android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/job_title14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/JobTitle"
+            android:textColor="@android:color/background_dark"
+            android:layout_marginTop="18dp"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+
 
     <!--<TextView
         android:id="@+id/interview_lable"

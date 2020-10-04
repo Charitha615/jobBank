@@ -45,17 +45,16 @@ public class view_applicant extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = (new LinearLayoutManager(this.getApplicationContext()));
         recview_applicant.setLayoutManager(linearLayoutManager);
 
-        options = new FirebaseRecyclerOptions.Builder<model_view_applicants>().setQuery(FirebaseDatabase.getInstance().getReference().child(firebaseChild), model_view_applicants.class).build();
+        options = new FirebaseRecyclerOptions.Builder<model_view_applicants>()
+                .setQuery(FirebaseDatabase.getInstance().getReference().child(firebaseChild), model_view_applicants.class).build();
 
         adapter_applicant = new myadapter_view_applicant(options,listener);
         recview_applicant.setAdapter(adapter_applicant);
 
-        //btn_view_list.setOnClickListener(new View.OnClickListener() {
         btn_view_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), view_list.class);
-                //i.putExtra("vStatus", options.getSnapshots().get(position).getStatus());
                 startActivity(i);
             }
         });
@@ -77,7 +76,6 @@ public class view_applicant extends AppCompatActivity {
                 intent.putExtra("vDescription", options.getSnapshots().get(position).getDescription());
                 intent.putExtra("vQualification", options.getSnapshots().get(position).getQualifications());
                 intent.putExtra("vRemarks", options.getSnapshots().get(position).getRemarks());
-                //intent.putExtra("vStatus", options.getSnapshots().get(position).getStatus());
                 startActivity(intent);
             }
         };
