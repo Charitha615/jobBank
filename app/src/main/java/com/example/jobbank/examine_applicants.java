@@ -159,6 +159,7 @@ public class examine_applicants extends AppCompatActivity {
                     clearBox();
 
                     Intent intent = new Intent(getApplicationContext(), view_applicant.class);
+                    intent.putExtra("TITLE",in_jobtitle.getText().toString());
                     startActivity(intent);
                 }
             }
