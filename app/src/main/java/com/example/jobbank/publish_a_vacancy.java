@@ -3,6 +3,7 @@ package com.example.jobbank;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -29,17 +30,13 @@ import java.util.Random;
 public class publish_a_vacancy extends AppCompatActivity {
 
     //Declaring
-    EditText  description, qualification, department, yearsOfExp, ageLimit, jobType, closingDate, jobTitle, companyName;
+    EditText  description, qualification, department, yearsOfExp, ageLimit, jobType, closingDate, jobTitle, companyName, vacancyid;
     Button publishBtn;
     DatabaseReference dbRef;
     pubVacancy std;
     private FirebaseUser publishedID;
     ImageView back;
-
-    //pubVacancy vacancyNo;
     pubVacancy pubVacancy_;
-
-     //String vacancyNo= null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +53,7 @@ public class publish_a_vacancy extends AppCompatActivity {
         jobType =(EditText) findViewById(R.id.jobTypeEdit);
         closingDate = (EditText)findViewById(R.id.editClosingDate);
         back = findViewById(R.id.back_imageView);
+        vacancyid = findViewById(R.id.editVacancyID);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,13 +64,9 @@ public class publish_a_vacancy extends AppCompatActivity {
 
         pubVacancy_ = new pubVacancy();
 
-
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("MM.dd.yyyy");
         final String pubdate = currentDate.format(calendar.getTime());
-
-
-
 
           dbRef = FirebaseDatabase.getInstance().getReference().child("PublishVacancy");
 
@@ -85,6 +79,9 @@ public class publish_a_vacancy extends AppCompatActivity {
                 //dbRef = FirebaseDatabase.getInstance().getReference().child("Publish_Vacancy");
 
                 //getUserData();
+
+                Intent i = new Intent(getApplicationContext(), view_published_vacancies.class);
+                startActivity(i);
 
                 try {
                     if(TextUtils.isEmpty(companyName.getText().toString())) //Check ID Is Empty
@@ -105,6 +102,8 @@ public class publish_a_vacancy extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Error in Job Type",Toast.LENGTH_LONG).show();
                     else if(TextUtils.isEmpty(closingDate.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Error in Closing Date",Toast.LENGTH_LONG).show();
+                    else if(TextUtils.isEmpty(vacancyid.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Error in Closing Date",Toast.LENGTH_LONG).show();
 
 
                     else
@@ -118,14 +117,14 @@ public class publish_a_vacancy extends AppCompatActivity {
                         pubVacancy_.setJobType(jobType.getText().toString().trim()); //Trim is Remove the Spaces in text fields
                         pubVacancy_.setClosingDate(closingDate.getText().toString().trim());
                         pubVacancy_.setCompanyName(companyName.getText().toString().trim());
-                        //pubVacancy_.setCompanyAddress("");
+                        pubVacancy_.setVacancyId(vacancyid.getText().toString().trim());
+                        pubVacancy_.setPublishedDate(pubdate);
+                        dbRef.child(vacancyid.getText().toString().trim()).setValue(pubVacancy_);
+                        Toast.makeText(getApplicationContext(),"Successfully Inserted",Toast.LENGTH_SHORT).show();
+                        clearBox();
                         pubVacancy_.setPublishedDate(pubdate);
                         pubVacancy_.setPublishedID(String.valueOf(pubVacancy_));
-                        //dbRef.child(jobTitle.getText().toString().trim()).setValue(std);
                         dbRef.push().setValue(pubVacancy_);
-
-
-
 
                         Toast.makeText(getApplicationContext(),"Successfully Inserted",Toast.LENGTH_SHORT).show();
                         clearBox();
@@ -149,92 +148,10 @@ public class publish_a_vacancy extends AppCompatActivity {
                 ageLimit.setText("");
                 jobType.setText("");
                 closingDate.setText("");
+                vacancyid.setText("");
             }
 
 
-//            public void getUserData(){
-//
-//                Calendar calendar = Calendar.getInstance();
-//
-//                SimpleDateFormat currentDate = new SimpleDateFormat("MM dd,yyyy");
-//
-//
-//                //globally assigning values
-//                //String descrip,qualifi,dep,yrs,age,jobt,closingD;
-//
-//                String title = jobTitle.getText().toString();
-//                String descrip = description.getText().toString();
-//                String qualifi = qualification.getText().toString();
-//                String dep = department.getText().toString();
-//                String yrs = yearsOfExp.getText().toString();
-//                String age = ageLimit.getText().toString();
-//                String jobt = jobType.getText().toString();
-//                String closingD = closingDate.getText().toString();
-//                String pubdate = currentDate.format(calendar.getTime());
-//                String publishedID;
-//                String CompanyName;
-//
-////                for(String vacancyNo = null){
-////                    vacancyNo = vacancyNo + 1;
-////                }
-//                //String vacancyNo = "0";
-//
-//
-////                               final DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("PublishVacancy");
-//
-//                //dbRef = FirebaseDatabase.getInstance().getReference().child("Publish_Vacancy");
-//
-//
-//
-//                HashMap<String, Object> UserDatamap = new HashMap<>();
-//
-//                    UserDatamap.put("jobTitle", title);
-//                    UserDatamap.put("description", descrip);
-//                    UserDatamap.put("qualification",  qualifi);
-//                    UserDatamap.put("publishedDate",  pubdate);
-//                    UserDatamap.put("department",  dep);
-//                    UserDatamap.put("yearsOfExp",  yrs);
-//                    UserDatamap.put("ageLimit",  age);
-//                    UserDatamap.put("jobType",  jobt);
-//                    UserDatamap.put("closingDate",  closingD);
-//                    //UserDatamap.put("PublishedID", publishedID);
-//                    //UserDatamap.put("uid",uid.getUid());
-//                     //UserDatamap.put("vacancyNo",vacancyNo);
-//
-//
-//
-////                //String vacancyNo = null;
-////                Random generator = new Random();
-////                StringBuilder randomStringBulder = new StringBuilder();
-////                vacancyNo = randomStringBulder.toString();
-//
-//                //vacancyNo = vacancyNo + 1;
-//         /*       dbRef.child(vacancyNo).updateChildren(UserDatamap).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            if(task.isSuccessful()){
-//                              *//*  Log.i("t","success");
-//
-//                                dbRef.addValueEventListener(new ValueEventListener() {
-//                                    @Override
-//                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                                        String sn = snapshot.child("JobTitle").getValue().toString();
-//                                        Log.i("te","got values");
-//                                    }
-//
-//                                    @Override
-//                                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                                    }
-//                                });*//*
-//                            }
-//
-//                        }
-//                    });*/
-//
-//
-//
-//            }
         });
 
 

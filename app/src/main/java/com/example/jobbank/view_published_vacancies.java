@@ -51,17 +51,20 @@ public class view_published_vacancies extends AppCompatActivity {
             @Override
             public void onClick(View v, int position) {
 
+
+                //retrieving data from firebase
                 Intent i = new Intent(getApplicationContext(), view_vacancy.class);
-//                i.putExtra("DESCRIPTION",pubVacancy_model.getDescription());
-//                i.putExtra("QUALIFICATION",pubVacancy_model.getQualification());
-//                i.putExtra("JOB_TITLE",pubVacancy_model.getJobTitle());
-//                i.putExtra("CLOSING_DATE",pubVacancy_model.getClosingDate());
-//                //i.putExtra("PUBLISHED_DATE",pubVacancy_model.getPublishedDate());
                 i.putExtra("DESCRIPTION", options.getSnapshots().get(position).getDescription());
                 i.putExtra("QUALIFICATION", options.getSnapshots().get(position).getQualification());
                 i.putExtra("JOB_TITLE", options.getSnapshots().get(position).getJobTitle());
                 i.putExtra("CLOSING_DATE", options.getSnapshots().get(position).getClosingDate());
                 i.putExtra("PUBLISHED_DATE", options.getSnapshots().get(position).getPublishedDate());
+                i.putExtra("VACANCY_ID", options.getSnapshots().get(position).getVacancyId());
+
+                i.putExtra("AGE_LIMIT", options.getSnapshots().get(position).getAgeLimit());
+                i.putExtra("JOB_TYPE", options.getSnapshots().get(position).getJobType());
+                i.putExtra("YEARS_OF_EXP", options.getSnapshots().get(position).getYrsOfExp());
+                i.putExtra("DEPARTMENT", options.getSnapshots().get(position).getDepartment());
 
                 startActivity(i);
             }

@@ -11,14 +11,16 @@ public class pubVacancy {
     private String closingDate,publishedDate;
     private String publishedID;
     private String CompanyName;
-    //private String CompanyAddress;
     private String CompanyLogo;
+    private String VacancyId;
 
     public pubVacancy(){
 
     }
 
-    public pubVacancy(String jobTitle, String description, String qualification, String department, String yrsOfExp, String ageLimit, String jobType, String closingDate, String publishedDate, String CompanyName, String publishedID, String CompanyLogo) {
+    public pubVacancy(String jobTitle, String description, String qualification, String department, String yrsOfExp,
+                      String ageLimit, String jobType, String closingDate, String publishedDate, String CompanyName,
+                      String publishedID, String CompanyLogo, String VacancyId) {
         this.jobTitle = jobTitle;
         this.description = description;
         this.qualification = qualification;
@@ -30,8 +32,8 @@ public class pubVacancy {
         this.publishedDate = publishedDate;
         this.CompanyName = CompanyName;
         this.publishedID = publishedID;
-        //this.CompanyAddress = CompanyAddress;
         this.CompanyLogo = CompanyLogo;
+        this.VacancyId = VacancyId;
     }
 
     public String getPublishedDate() {
@@ -114,14 +116,6 @@ public class pubVacancy {
         CompanyName = companyName;
     }
 
-//    public String getCompanyAddress() {
-//        return CompanyAddress;
-//    }
-
-//    public void setCompanyAddress(String companyAddress) {
-//        CompanyAddress = companyAddress;
-//    }
-
     public String getCompanyLogo() {
         return CompanyLogo;
     }
@@ -138,12 +132,12 @@ public class pubVacancy {
         this.publishedID = publishedID;
     }
 
+    public String getVacancyId() {
+        return VacancyId;
+    }
 
-    //    public String getCompanyID() {
-//        return CompanyID;
-//    }
-//
-//    public void setCompanyID(String companyID) {
-//        CompanyID = companyID;
-//    }
+    public void setVacancyId(String vacancyId) {
+        this.VacancyId = vacancyId;
+    }
+
 }

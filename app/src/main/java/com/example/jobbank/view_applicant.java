@@ -55,6 +55,7 @@ public class view_applicant extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), view_list.class);
+                i.putExtra("TITLE", job_title_textView.getText().toString());
                 startActivity(i);
             }
         });
