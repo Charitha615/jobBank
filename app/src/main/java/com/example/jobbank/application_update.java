@@ -25,6 +25,7 @@ public class application_update extends AppCompatActivity {
     Button btn_Update, btn_Delete;
     Test std; // create a object for call the java(Test) Class
     DatabaseReference dbref;
+    user_home home = new user_home();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,15 +89,8 @@ public class application_update extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Successfully Updated", Toast.LENGTH_LONG).show();
 
-                    /*Intent intent = new Intent(getApplicationContext(), testMain.class);
-                    startActivity(intent);*/
-//                    FragmentManager fragmentManager = getFragmentManager ();
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction ();
-//
-//                    myApplicationFragment myfragment = new myApplicationFragment(); //your fragment // work here to add, remove, etc
-//                    fragmentTransaction.add (R.id.fragment_container, myfragment);
-//                    fragmentTransaction.commit ();
-//
+                    Intent intent = new Intent(getApplicationContext(), user_home.class);
+                    startActivity(intent);
 
                 }
 
@@ -122,8 +116,8 @@ public class application_update extends AppCompatActivity {
                             dbref.removeValue();
                             Toast.makeText(getApplicationContext(), "Successfully Deleted", Toast.LENGTH_LONG).show();
 
-                            Intent inte = new Intent(getApplicationContext(), testMain.class);
-                            startActivity(inte);
+                            Intent intent = new Intent(getApplicationContext(), user_home.class);
+                            startActivity(intent);
                         }
                     }
                 })
@@ -131,8 +125,6 @@ public class application_update extends AppCompatActivity {
 
                 AlertDialog alert = builder.create();
                 alert.show();
-
-
             }
         });
 
