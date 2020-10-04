@@ -7,4 +7,175 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">192dp</item>
+        <item name="android:background">@drawable/background</item>
+    </style>
+
+    <style name="AppThemee" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#B61408</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="navigation_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+    <style name="normal_btn">
+        <item name="android:layout_width">93dp</item>
+        <item name="android:layout_height">39dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="blue_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#2059ED</item>
+    </style>
+    <style name="submit_applicant_style">
+        <item name="android:layout_width">190dp</item>
+        <item name="android:layout_height">37dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#000000</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="create_account_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#11CFC5</item>
+    </style>
+
+    <!--Nimesha-->
+
+
+    <style name="buttons_examine_applicants">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#000000</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="buttons2_examine_applicants">
+        <item name="android:layout_width">143dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">#66d9f0</item>
+    </style>
+
+    <style name="txtview_examine_applicants">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="pointboxes_examine_applicants">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+    </style>
+
+    <style name="name_com_interested">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="date_com_interested">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <!--Ayeshka-->
+
+    <style name="applicant_no_txtbox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="text_in_vacancy_pages">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="job_posted_date">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">35dp</item>
+    </style>
+
+    <style name="job_main_title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">28dp</item>
+    </style>
+
+    <style name="view_more_button">
+        <item name="android:layout_width">38dp</item>
+        <item name="android:layout_height">52dp</item>
+    </style>
+
+    <style name="back_btn">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <style name="vacancy_mini_btns">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="android:textColorHighlight">#01092C</item>
+    </style>
+
+    <style name="logo">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <!--Galee-->
+
+    <style name="AppliedVacancies">
+        <item name = "android:layout_width">387dp</item>
+        <item name = "android:layout_height">115dp</item>
+        <item name = "android:background">#69009688</item>
+    </style>
+
+    <style name="VacancyPosition">
+        <item name = "android:textSize">24sp</item>
+        <item name = "android:paddingLeft">10sp</item>
+    </style>
+
+    <style name="EachBookmark">
+        <item name = "android:paddingLeft">20sp</item>
+        <item name = "android:layout_width">330dp</item>
+        <item name = "android:layout_height">62dp</item>
+        <item name = "android:textSize">24sp</item>
+    </style>
+
+    <style name="MoreButton">
+        <item name = "android:layout_width">31dp</item>
+        <item name = "android:layout_height">53dp</item>
+    </style>
+
 </resources>
