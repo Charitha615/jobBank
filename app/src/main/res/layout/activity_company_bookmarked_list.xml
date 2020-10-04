@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".company_bookmarked_list"
+    android:background="@drawable/background_img"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:background="@drawable/background">
+        <ImageView
+            android:id="@+id/imageView61"
+            android:layout_width="170dp"
+            android:layout_height="189dp"
+            app:srcCompat="@drawable/bookmark" />
+        <TextView
+            android:id="@+id/txt_bookmarked_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_Bookmarked"
+            android:textColor="@android:color/background_dark"
+            android:textSize="36sp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="80dp"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recview_bookmarked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
