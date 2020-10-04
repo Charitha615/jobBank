@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "936067467059",
+    "firebase_url": "https://jobbank-bcaec.firebaseio.com",
+    "project_id": "jobbank-bcaec",
+    "storage_bucket": "jobbank-bcaec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936067467059:android:61bc33d3d84c9122526046",
+        "android_client_info": {
+          "package_name": "com.example.jobbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936067467059-44nmerofccv5jad6astmc8p05rb1ahaj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jobbank",
+            "certificate_hash": "2a9803faf2aced296b0374f7e80728775ddf03f9"
+          }
+        },
+        {
+          "client_id": "936067467059-irom7ruipe7dhij4gh3ldmg6gj5l727k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQvxaAXrG0mHx3ttNjAu-paZdGfd5hRuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936067467059-irom7ruipe7dhij4gh3ldmg6gj5l727k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936067467059:android:9b42da769f6dd046526046",
+        "android_client_info": {
+          "package_name": "com.example.jobook_loginsign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936067467059-ri2p1qp49k94uugbn6jvlttvi2din3g9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jobook_loginsign",
+            "certificate_hash": "f6f515dd45d0fc779b80e4651c6e13320c0448e2"
+          }
+        },
+        {
+          "client_id": "936067467059-43veot3bm4vo48ccd44dhve20ud9gmfq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jobook_loginsign",
+            "certificate_hash": "2a9803faf2aced296b0374f7e80728775ddf03f9"
+          }
+        },
+        {
+          "client_id": "936067467059-irom7ruipe7dhij4gh3ldmg6gj5l727k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQvxaAXrG0mHx3ttNjAu-paZdGfd5hRuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936067467059-irom7ruipe7dhij4gh3ldmg6gj5l727k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

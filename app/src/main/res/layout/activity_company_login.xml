@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".company_login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:orientation="vertical"
+        android:background="@drawable/background">
+
+        <ImageView
+            android:id="@+id/imageView34"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_height="139dp"
+            app:srcCompat="@drawable/rrr" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="90dp"
+            android:text="@string/Log_IN"
+            android:textColor="#FFFFFF"
+            android:textSize="70dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout0054"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/Com_Email_Input"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_height="wrap_content"
+            android:hint="Company Email"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/Com_Pass_Input"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="Password"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/lay1454"
+        android:layout_below= "@id/layout0054"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/Com_SignIn"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            style="@style/normal_btn"
+            android:text="Sign In"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/forgot_Com_pass"
+            android:layout_marginTop="40dp"
+            style="@style/blue_style"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/Com_SignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forget Password?"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below= "@id/lay1454"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/com_signuplink4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            style="@style/create_account_style"
+            android:text="New User Get started now? Sign up"
+            android:textAlignment="center"/>
+    </RelativeLayout>
+
+</RelativeLayout>
