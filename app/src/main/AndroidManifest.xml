@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jobbank">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +13,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Company_home" />
+        <activity android:name=".pub_a_vacancy" />
+        <activity android:name=".publish_a_vacancy" />
+        <activity android:name=".company_bookmarked_list" />
+        <activity android:name=".company_interested_list" />
+        <activity android:name=".edit_vacancy" />
+        <activity android:name=".user_home" />
+        <activity android:name=".view_vacancy" />
+        <activity android:name=".view_published_vacancies" />
+        <activity android:name=".examine_applicants" />
+        <activity android:name=".view_applicant" />
+        <activity android:name=".view_list" />
+        <activity android:name=".user_account" />
+        <activity android:name=".user_account_edit" />
+        <activity android:name=".application_update" />
+        <activity android:name=".view_applications" />
+        <activity android:name=".user_bookmarks" />
+        <activity android:name=".user_add_cv" />
+        <activity android:name=".user_cv_preview" />
+        <activity android:name=".com_register_2" />
+        <activity android:name=".com_register_1" />
+        <activity android:name=".company_login" />
+        <activity android:name=".user_register" />
+        <activity android:name=".user_login" />
+        <activity android:name=".welcome_page" />
     </application>
 
 </manifest>

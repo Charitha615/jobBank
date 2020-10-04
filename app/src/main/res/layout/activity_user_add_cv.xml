@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:background="@drawable/background_img"
+    android:layout_height="match_parent"
+    tools:context=".user_add_cv">
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/top01"
+        android:background="@drawable/background"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="102dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/com_logo_in"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="0dp"
+                app:srcCompat="@drawable/bulid" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/job_Title__"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Company_name"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/com_address_in"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="Virtusa Pvt Ltd, Colombo 10"/>
+
+        <TextView
+            android:id="@+id/job_type"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="Full Time Degree on IT / At Least 2 years of Experience"/>
+
+        <TextView
+            android:id="@+id/qualifications_in"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="Full Time Degree on IT / At Least 2 years of Experience"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/agess_limit"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content"
+                android:text="Age Limit"/>
+        <TextView
+            android:id="@+id/age_limit"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:textColor="#E80909"
+            android:text="50"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/des001"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/top01">
+
+        <TextView
+
+            android:id="@+id/com_des_"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="A company description (sometimes referred to as an “about me” or “bio” section) is defined as a general overview of your company as well as who you are as a business owner. Anyone who reads your company description should get a clear idea of what your business does as well as the hole you're working to fill" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/closing_date_sssin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Closing Date" />
+
+            <TextView
+                android:id="@+id/closing_date_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="2010/02/01"
+                android:textColor="#E80909" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_below="@+id/des001"
+    android:layout_marginTop="5dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cv_full_name_input"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="54dp"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:textColor="#0B0A0A" />
+
+        <EditText
+            android:id="@+id/cv_last_name_input"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="54dp"
+            android:layout_marginLeft="5dp"
+            android:hint="Nic Number"
+            android:inputType="textPersonName"
+            android:textColor="#0B0A0A"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cv_email_input"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="54dp"
+            android:hint="@string/Email"
+            android:inputType="textEmailAddress"
+            android:textColor="#0B0A0A" />
+
+        <EditText
+            android:id="@+id/cv_mobile_input"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="54dp"
+            android:layout_marginLeft="5dp"
+            android:hint="Mobile"
+            android:inputType="phone"
+            android:textColor="#0B0A0A"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cv_work_ex_input"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="54dp"
+            android:hint="Working Experience"
+            android:inputType="number"
+            android:textColor="#0B0A0A" />
+
+        <EditText
+            android:id="@+id/cv_age_input"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="54dp"
+            android:layout_marginLeft="5dp"
+            android:hint="Age"
+            android:inputType="number"
+            android:textSize="18sp"
+            android:textColor="#0B0A0A"/>
+
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/cv_description_input"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Type a Description"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/cv_qualification_input"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="start|top"
+        android:hint="Type a Qualifications"
+        android:inputType="textMultiLine" />
+
+
+
+    <Button
+        android:id="@+id/cv_submit_Applicant_btn"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        style="@style/normal_btn"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:text="Upload CV"/>
+
+
+</LinearLayout>
+
+</RelativeLayout>
+</ScrollView>
