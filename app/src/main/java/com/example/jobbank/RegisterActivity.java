@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        /*super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
@@ -90,10 +90,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-
+*/
     }
 
-    private void registerUser() {
+   /* private void registerUser() {
         userVal = username.getText().toString().trim();
         usernameval = fullname.getText().toString().trim();
         emailVal = email.getText().toString().trim();
@@ -142,9 +142,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
-    }
+    }*/
 
-    private void addUserData() {
+    /*private void addUserData() {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -191,6 +191,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 
 }

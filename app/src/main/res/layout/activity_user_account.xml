@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user_account"
+    android:background="@drawable/background_img">
+
+    <LinearLayout
+        android:id="@+id/upper"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:background="@drawable/background">
+
+        <ImageView
+            android:id="@+id/backBookmarks"
+            android:layout_width="51dp"
+            android:layout_height="46dp"
+            app:srcCompat="@drawable/back"
+            android:layout_marginTop="6dp"/>
+
+        <ImageView
+            android:id="@+id/imageView_bookmark"
+            android:layout_width="117dp"
+            android:layout_height="159dp"
+            android:layout_marginLeft="-23dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/bookmark_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/uName"
+            android:textColor="@android:color/background_light"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="15dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/upper"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/username_display"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corner_white"
+            android:paddingLeft="18sp"
+            android:paddingTop="10sp"
+            android:paddingRight="90sp"
+            android:text="Username"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/nameedit"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"/>
+
+        <TextView
+            android:id="@+id/passwordDisplay"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corner_white"
+            android:paddingLeft="15sp"
+            android:text="********"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="70sp"
+            android:drawableLeft="@drawable/email"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"/>
+
+        <TextView
+            android:id="@+id/email_display"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corner_white"
+            android:paddingLeft="20sp"
+            android:paddingTop="10sp"
+            android:paddingRight="115sp"
+            android:text="Email"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/password"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"/>
+
+        <Button
+            android:id="@+id/editProfile"
+            android:layout_width="96dp"
+            android:layout_height="51dp"
+            android:background="@drawable/rounded_corners"
+            android:drawableRight="@drawable/edit"
+            android:paddingLeft="15sp"
+            android:paddingRight="18sp"
+            android:text="@string/edit"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="140dp"/>
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="160dp"/>
+
+        <TextView
+            android:id="@+id/need_help3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Help_Support"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="140dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

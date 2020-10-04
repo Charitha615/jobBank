@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/position_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="position"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/company_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="company"
+        android:inputType="textPersonName" />
+
+
+
+    <EditText
+        android:id="@+id/closing_Date_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="closing date"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/vacancy_Status_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="status"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/fNameFill_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/namelabel"
+        android:layout_marginLeft="10dp"
+        android:hint="fname"/>
+
+    <EditText
+        android:id="@+id/lNameFill_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/lnamelabel"
+        android:layout_toRightOf="@+id/fNameFill"
+        android:layout_marginLeft="10dp"
+        android:hint="lname"/>
+
+    <EditText
+        android:id="@+id/EmailAddressFill_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/emailLabel"
+        android:layout_marginLeft="10dp"
+        android:hint="email"/>
+    <EditText
+        android:id="@+id/PhoneFill_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:layout_below="@+id/phoneLabel"
+        android:layout_toRightOf="@+id/EmailAddressFill"
+        android:layout_marginLeft="10dp"
+        android:hint="phone"/>
+
+    <EditText
+        android:id="@+id/exFill_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/experienceLabel"
+        android:layout_marginLeft="10dp"
+        android:hint="experience"/>
+
+    <EditText
+        android:id="@+id/ageFill_input"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/ageLabel"
+        android:layout_marginLeft="10dp"
+        android:hint="age"/>
+
+    <EditText
+        android:id="@+id/desFill_input"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_below="@+id/descriptionLabel"
+        android:layout_marginLeft="10dp"
+        android:hint="description"/>
+
+    <EditText
+        android:id="@+id/quaFill_input"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/qualificationLabel"
+        android:layout_marginLeft="10dp"
+        android:hint="qualifications"/>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:orientation="horizontal">
+
+
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/show_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="show" />
+
+        <Button
+            android:id="@+id/update_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/delete_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="delete" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
