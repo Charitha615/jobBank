@@ -142,7 +142,6 @@ public class company_login extends AppCompatActivity {
                                             startActivity(intent);
 
                                             loadingBar.dismiss();
-                                            Toast.makeText(company_login.this, company, Toast.LENGTH_LONG).show();
 
                                         }
                                         else

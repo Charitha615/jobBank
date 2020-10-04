@@ -185,7 +185,7 @@ public class user_cv_preview extends AppCompatActivity {
         progressDialog.setProgress(0);
         progressDialog.show();
 
-        final String fileName = Nic_number_in+".pdf";
+        final String fileName = Nic_number_in;
         StorageReference storageReference = storage.getReference(); // return path
 
         storageReference.child(fileName).putFile(pdfUri)

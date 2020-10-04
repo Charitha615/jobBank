@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".publish_a_vacancy">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,13 +21,13 @@
         </activity>
         <activity android:name=".Company_home" />
         <activity android:name=".pub_a_vacancy" />
-        <activity android:name=".welcome_page" />
+        <activity android:name=".publish_a_vacancy" />
         <activity android:name=".company_bookmarked_list" />
         <activity android:name=".company_interested_list" />
         <activity android:name=".edit_vacancy" />
-        <activity android:name=".SplashActivity" />
-        <activity android:name=".view_published_vacancies" />
+        <activity android:name=".user_home" />
         <activity android:name=".view_vacancy" />
+        <activity android:name=".view_published_vacancies" />
         <activity android:name=".examine_applicants" />
         <activity android:name=".view_applicant" />
         <activity android:name=".view_list" />
@@ -43,7 +43,7 @@
         <activity android:name=".company_login" />
         <activity android:name=".user_register" />
         <activity android:name=".user_login" />
-        <activity android:name=".user_home" />
+        <activity android:name=".welcome_page" />
     </application>
 
 </manifest>

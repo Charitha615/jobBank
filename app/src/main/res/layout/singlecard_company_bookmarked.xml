@@ -19,38 +19,40 @@
         android:layout_marginTop="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView46"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="25dp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/imageView47"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="5dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/avatar"
-            android:layout_marginBottom="5dp"/>
+            android:src="@drawable/avatar"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/nameBookmarked"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sample Name"
                 android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:textSize="25dp"
-                android:textColor="@android:color/background_dark"></TextView>
+                android:paddingTop="2dp"
+                android:text="Sample Name"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp"></TextView>
 
             <TextView
+                android:id="@+id/positionBookmarked"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Software Engineering"
+                android:text="22/08/2020"
                 android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:textSize="18dp"
+                android:paddingTop="5dp"
+                android:textSize="11dp"
                 android:textColor="@android:color/background_dark"></TextView></LinearLayout>
 
     </LinearLayout>
