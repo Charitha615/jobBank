@@ -125,8 +125,7 @@ public class Model_Home {
     }
 
     public String getProfileImage() {
-        //return ProfileImage;
-        return ("https://us.123rf.com/450wm/solargaria/solargaria1709/solargaria170900007/85362512-user-icon-male-avatar-in-business-suit-businessman-flat-icon-man-in-business-suit-avatar-of-business.jpg?ver=6");
+        return ProfileImage;
     }
 
     public void setProfileImage(String profileImage) {
