@@ -1,8 +1,10 @@
 package com.example.jobbank;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,9 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,77 +26,66 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class RegisterActivity extends AppCompatActivity {
+public class user_register extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
-    private DatabaseReference refUsers;
+    TextView return_signin;
+
+    private FirebaseAuth Authent_User;
+    private DatabaseReference ref_Users;
     private String firebaseUserId;
-    private String userVal,usernameval;
+    private String userVal;
     private String emailVal;
-    private String passwordVal, phoneval;
+    private String passwordVal, C_password;
     private FirebaseUser userID;
-    private EditText fullname, email, password, username;
+    private EditText user_name, email_in, password,confirm_password;
     private Button registerBtn;
-    private TextView singInLink,pplink,tclink;
     private ProgressDialog loadingBar;
-
+    Button user_create_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /*super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_user_register);
 
-        mAuth = FirebaseAuth.getInstance();
+        return_signin = findViewById(R.id.user_signin_link);
 
-        registerBtn = (Button) findViewById(R.id.signup);
-        username = (EditText) findViewById(R.id.userName);
-        fullname = (EditText) findViewById(R.id.fullname);
-        email = (EditText) findViewById(R.id.email);
-        password = (EditText) findViewById(R.id.password);
-        singInLink = (TextView) findViewById(R.id.signinlink);
+        Authent_User = FirebaseAuth.getInstance();
         loadingBar = new ProgressDialog(this);
-        pplink= findViewById(R.id.pp);
-        tclink = findViewById(R.id.tc);
+        user_create_button = findViewById(R.id.User_create_btn);
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        user_name = findViewById(R.id.user_name_input);
+        email_in = findViewById(R.id.email_input);
+        password = findViewById(R.id.password_input);
+        confirm_password  = findViewById(R.id.confirm_password_input);
+
+
+
+        //Sign Up Button
+        user_create_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 registerUser();
             }
         });
 
-        singInLink.setOnClickListener(new View.OnClickListener() {
+        //Return Sign In Page
+
+        return_signin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),user_login.class));
             }
         });
-
-        pplink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/e/2PACX-1vQAjcedLbE2AJwDsuthSDiyBGztdWG85DW3oaV-gFstp-xrydbTMUvxpoiwjVEqt9gHpZtc-u3dOKtH/pub")));
-            }
-        });
-
-        tclink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/e/2PACX-1vRFNHkWzszqGlAiGlNlMTPe8oFOTly_xLNY2Hcu3PQ5BH9QmTXOM_zOom74Y8jr_JVgnyysugVGSi8J/pub")));
-            }
-        });
-
-*/
     }
 
-   /* private void registerUser() {
-        userVal = username.getText().toString().trim();
-        usernameval = fullname.getText().toString().trim();
-        emailVal = email.getText().toString().trim();
+    private void registerUser() {
+
+        userVal = user_name.getText().toString().trim();
+        emailVal = email_in.getText().toString().trim();
         passwordVal = password.getText().toString().trim();
+        C_password = confirm_password.getText().toString().trim();
+
+
 
 
         if (TextUtils.isEmpty(userVal)) {
@@ -106,8 +94,8 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "email missing", Toast.LENGTH_LONG).show();
         } else if (TextUtils.isEmpty(passwordVal)) {
             Toast.makeText(this, "Password missing", Toast.LENGTH_LONG).show();
-        }else if (TextUtils.isEmpty(usernameval)) {
-            Toast.makeText(this, "Password missing", Toast.LENGTH_LONG).show();
+        }else if (!passwordVal.equals(C_password)) {
+            Toast.makeText(this, "Password Mismatch", Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -117,21 +105,21 @@ public class RegisterActivity extends AppCompatActivity {
             loadingBar.show();
 
 
-            mAuth.createUserWithEmailAndPassword(emailVal, passwordVal)
-                    .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+            Authent_User.createUserWithEmailAndPassword(emailVal, passwordVal)
+                    .addOnCompleteListener(user_register.this, new OnCompleteListener<AuthResult>() {
 
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Toast.makeText(RegisterActivity.this, "User Registration Successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(user_register.this, "User Registration Successful", Toast.LENGTH_LONG).show();
 
-                                userID = mAuth.getCurrentUser();
+                                userID = Authent_User.getCurrentUser();
                                 addUserData();
 
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(RegisterActivity.this, "User Registration failed...Try again ", Toast.LENGTH_LONG).show();
+                                Toast.makeText(user_register.this, "User Registration failed...Try again ", Toast.LENGTH_LONG).show();
                                 loadingBar.dismiss();
 
                             }
@@ -142,9 +130,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
-    }*/
+    }
 
-    /*private void addUserData() {
+    private void addUserData() {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -155,11 +143,9 @@ public class RegisterActivity extends AppCompatActivity {
                     HashMap<String, Object> userdataMap = new HashMap<>();
                     userdataMap.put("Uid", userID.getUid());
                     userdataMap.put("username", userVal);
-                    userdataMap.put("fullname", usernameval);
                     userdataMap.put("email", emailVal);
-                    userdataMap.put("phone", phoneval);
-                    userdataMap.put("ProfileImage", "https://firebasestorage.googleapis.com/v0/b/xplorer-4fa2d.appspot.com/o/DefaultProfilePicture.png?alt=media&token=edd1db50-1f36-46c4-af64-f8f226407ce9");
-                    userdataMap.put("LoginStatus", "OffLine");
+                    userdataMap.put("ProfileImage", "https://us.123rf.com/450wm/solargaria/solargaria1709/solargaria170900007/85362512-user-icon-male-avatar-in-business-suit-businessman-flat-icon-man-in-business-suit-avatar-of-business.jpg?ver=6");
+                    userdataMap.put("LoginStatus", "Offline");
                     userdataMap.put("search", userVal.toLowerCase());
 
 
@@ -168,13 +154,13 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(RegisterActivity.this, "Congratulations!!, your  account has been created ", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(user_register.this, "Congratulations!!, your  account has been created ", Toast.LENGTH_LONG).show();
                                         loadingBar.dismiss();
 
-                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                        Intent intent = new Intent(user_register.this, user_login.class);
                                         startActivity(intent);
                                     } else {
-                                        Toast.makeText(RegisterActivity.this, "Network error.. Please try again", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(user_register.this, "Network error.. Please try again", Toast.LENGTH_LONG).show();
                                         loadingBar.dismiss();
 
                                     }
@@ -190,7 +176,5 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-
-    }*/
-
+    }
 }

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view_applications"
+    android:background="@drawable/background_img">
+
+    <LinearLayout
+        android:id="@+id/upper"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@drawable/background">
+
+        <ImageView
+            android:id="@+id/backApps"
+            android:layout_width="51dp"
+            android:layout_height="46dp"
+            app:srcCompat="@drawable/back"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:id="@+id/bookmark_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/view"
+            android:textColor="@android:color/background_light"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/position"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/upper"
+        android:text="@string/positionName"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/positionFill"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/upper"
+        android:textSize="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="170dp"
+        android:background="@drawable/rounded_corner_white"
+        android:paddingTop="14dp"
+        android:paddingLeft="10dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/company"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/positionFill"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/company"
+        android:textSize="20dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/companyFill"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/positionFill"
+        android:textSize="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="170dp"
+        android:background="@drawable/rounded_corner_white"
+        android:paddingTop="14dp"
+        android:paddingLeft="10dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/companyFill"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/VacancyDate"
+        android:textSize="20dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/dateFill"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/companyFill"
+        android:textSize="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="170dp"
+        android:background="@drawable/rounded_corner_white"
+        android:paddingTop="14dp"
+        android:paddingLeft="10dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/dateFill"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/VacancyStatus"
+        android:textSize="20dp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/statusFill"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/dateFill"
+        android:textSize="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="170dp"
+        android:background="@drawable/rounded_corner_white"
+        android:paddingTop="14dp"
+        android:paddingLeft="10dp">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/statusFill"
+        android:background="@drawable/rounded_corners"
+        android:text="@string/viewApp"
+        android:layout_marginTop="50dp"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>
