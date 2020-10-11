@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -33,6 +34,9 @@ public class user_login extends AppCompatActivity {
     EditText email_in,password_in;
     Button signin;
 
+    static user_login INSTANCE;
+    String data;
+
 
     private FirebaseAuth Login_User;
     private DatabaseReference refUsers, database;
@@ -41,12 +45,15 @@ public class user_login extends AppCompatActivity {
     private Button signInBtn;
     private TextView registerLink, forgotPasswordLink;
     private ProgressDialog loadingBar;
-    private String user;
+    public static String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
+
+        INSTANCE=this;
+
 
         user_sign = findViewById(R.id.signuplink);
 
@@ -103,7 +110,6 @@ public class user_login extends AppCompatActivity {
             }
         });
     }
-
     private void loginUser() {
 
         emailVal = email_in.getText().toString().trim();
@@ -126,18 +132,20 @@ public class user_login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                user = Login_User.getCurrentUser().getUid();
+                                userid = Login_User.getCurrentUser().getUid();
                                 DatabaseReference rootref = FirebaseDatabase.getInstance().getReference().child("Users");
 
                                 rootref.addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        if(snapshot.child(user).exists())
+                                        if(snapshot.child(userid).exists())
                                         {
 
                                             // checkIsAdmin();
 
                                             Intent intent = new Intent(user_login.this, user_home.class);
+
+                                            data = userid;
 
                                             startActivity(intent);
 
@@ -173,5 +181,15 @@ public class user_login extends AppCompatActivity {
 
         }
 
+    }
+
+    public static user_login getActivityInstance()
+    {
+        return INSTANCE;
+    }
+
+    public String getData()
+    {
+        return this.data;
     }
 }

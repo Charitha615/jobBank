@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,6 +34,7 @@ public class user_home extends AppCompatActivity {
     my_adapter_home.RecyclerViewClickListener listener;
     RecyclerView recyclerView;
     SearchView searchView;
+    String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +54,12 @@ public class user_home extends AppCompatActivity {
 
 
 
-
-
       //Dashboard Button
 
       menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Fragment fragment;
 
                 fragment = new Fragment_User_Dashbord();
