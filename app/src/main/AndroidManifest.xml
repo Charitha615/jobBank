@@ -13,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashActivity"></activity>
+        <activity android:name=".Company_Profile"></activity>
 
 
-        <activity android:name=".Company_Profile">
+        <activity android:name=".user_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".user_home" />
+        <activity android:name=".SplashActivity" />
         <activity android:name=".user_account" />
         <activity android:name=".pub_a_vacancy" />
         <activity android:name=".publish_a_vacancy" />
