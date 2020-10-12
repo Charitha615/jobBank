@@ -50,6 +50,7 @@ public class view_vacancy extends AppCompatActivity {
         String pub_date = i.getStringExtra("PUBLISHED_DATE");
         final String vID = i.getStringExtra("VACANCY_ID");
 
+
         final String dep = i.getStringExtra("DEPARTMENT");
         final String yrs = i.getStringExtra("YEARS_OF_EXP");
         final String age_ = i.getStringExtra("AGE_LIMIT");
@@ -89,6 +90,8 @@ public class view_vacancy extends AppCompatActivity {
                 i.putExtra("Years_Of_Exp01", yrs);
                 i.putExtra("JobType01", Jobtype);
                 i.putExtra("ClosingDate01", closing_Date);
+                i.putExtra("vID", vID);
+
 
 
 
@@ -130,8 +133,8 @@ public class view_vacancy extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 dbRef = FirebaseDatabase.getInstance().getReference("PublishVacancy/" + vID);
                                 dbRef.removeValue();
-                                Log.e("Test", "success!");
-                                Log.e("Test", vID);
+                                //Log.e("Test", "success!");
+                                //Log.e("Test", vID);
                                 Toast.makeText(getApplicationContext(), "Successfully Deleted", Toast.LENGTH_LONG).show();
 
                                 Intent inte = new Intent(getApplicationContext(), view_published_vacancies.class);
@@ -144,6 +147,7 @@ public class view_vacancy extends AppCompatActivity {
                 alert.show();
             }
         });
+
 
     }
 }

@@ -18,7 +18,7 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class Fragment_User_Dashbord extends Fragment {
-    Intent my_application_inten;
+    Intent Uprofile;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,14 +66,19 @@ public class Fragment_User_Dashbord extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__user__dashbord, container, false);
-/*
-        View rootView= inflater.inflate(R.layout.fragment_company_dashbord, container, false);
-        my_application_inten = new Intent(getActivity(), my.class);
-        final Button save = (Button) rootView.findViewById(R.id.bookmark_btn9);*/
+        //return inflater.inflate(R.layout.fragment__user__dashbord, container, false);
 
+        View rootView= inflater.inflate(R.layout.fragment__user__dashbord, container, false);
 
+        final Button profile = (Button) rootView.findViewById(R.id.user_profile);
+        Uprofile = new Intent(getActivity(), user_account.class);
 
-
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Uprofile);
+            }
+        });
+        return rootView;
     }
 }

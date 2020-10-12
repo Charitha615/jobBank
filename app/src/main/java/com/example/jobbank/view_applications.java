@@ -2,6 +2,7 @@ package com.example.jobbank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AutomaticZenRule;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -55,7 +56,7 @@ public class view_applications extends AppCompatActivity {
         final String qua = i.getStringExtra("quaVal");
 
 
-        if (!stts.equals("Initial")){
+        if (checkStatus(stts)){
             btn_view.setEnabled(false);
         }
 
@@ -86,6 +87,15 @@ public class view_applications extends AppCompatActivity {
             }
         });
 
+    }
 
+    public static boolean checkStatus(String st){
+
+        boolean val = false;
+        if(st.equals("Initial")){
+            val = true;
+        }
+
+        return val;
     }
 }

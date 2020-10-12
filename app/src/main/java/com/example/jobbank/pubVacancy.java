@@ -137,7 +137,7 @@ public class pubVacancy {
     }
 
     public void setVacancyId(String vacancyId) {
-        VacancyId = vacancyId;
+        this.VacancyId = vacancyId;
     }
 
 }
