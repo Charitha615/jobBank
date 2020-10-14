@@ -23,9 +23,9 @@ public class application_update extends AppCompatActivity {
     EditText in_fName, in_id, in_email, in_phone, in_ex, in_age, in_des, in_qua;
     ImageView img_back;
     Button btn_Update, btn_Delete;
-    Test std; // create a object for call the java(Test) Class
+    //Test std; // create a object for call the java(Test) Class
     DatabaseReference dbref;
-    user_home home = new user_home();
+    //user_home home = new user_home();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -29,20 +29,31 @@
             android:layout_height="60dp"
             android:orientation="horizontal">
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/recent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="@string/RecentApplications" />
+                android:text="@string/RecentApplications" />-->
 
+            <Button
+                android:id="@+id/view_No_Apps"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:text="View Total No. of Applications"
+                android:layout_marginStart="10dp"
+                android:textAllCaps="false"
+                android:background="@drawable/rounded_corners">
+
+            </Button>
             <TextView
                 android:id="@+id/numberOfApps"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="200dp"
-                android:text="09"
-                android:textSize="24sp" />
+                android:layout_marginStart="60dp"
+                android:text=""
+                android:textSize="24sp"
+                android:layout_marginTop="5dp"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

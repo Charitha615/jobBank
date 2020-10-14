@@ -34,6 +34,7 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class examine_applicants extends AppCompatActivity {
 
+    private static String status1;
     TextView in_name,in_jobtitle,in_email,in_age,in_experience,in_description,in_qualifications,in_marks,in_totalMarks;
     EditText in_remarks,in_marks1,in_marks2,in_marks3,in_marks4;
     Button btn_calc_tot, btn_save,btn_interview,btn_pending,btn_rejected,btn_delete,btn_cv;
@@ -114,8 +115,8 @@ public class examine_applicants extends AppCompatActivity {
                 else if ((Integer.parseInt(in_marks1.getText().toString())>10) || (Integer.parseInt(in_marks2.getText().toString())>10) || (Integer.parseInt(in_marks3.getText().toString())>10) || (Integer.parseInt(in_marks4.getText().toString())>10))
                     Toast.makeText(getApplicationContext(), "Marks should be given out of 10", Toast.LENGTH_LONG).show();
                 else{
-                    total = Integer.parseInt(in_marks1.getText().toString()) + Integer.parseInt(in_marks2.getText().toString()) + Integer.parseInt(in_marks3.getText().toString()) + Integer.parseInt(in_marks4.getText().toString());
-                    in_totalMarks.setText(String.valueOf(total));
+                    calcTot();
+                    status = setStatus(total);
                 }
             }
         });
@@ -189,6 +190,24 @@ public class examine_applicants extends AppCompatActivity {
                 alert.show();
             }
         });
+    }
+
+    private void calcTot() {
+        total = Integer.parseInt(in_marks1.getText().toString()) + Integer.parseInt(in_marks2.getText().toString()) + Integer.parseInt(in_marks3.getText().toString()) + Integer.parseInt(in_marks4.getText().toString());
+        in_totalMarks.setText(String.valueOf(total));
+    }
+
+    public static String setStatus(int marks){
+        if(marks >= 30){
+            status1 = "Interview";
+        }
+        else if(marks >= 15){
+            status1 = "Pending";
+        }
+        else{
+            status1 = "Rejected";
+        }
+        return status1;
     }
 
     private void clearBox()
