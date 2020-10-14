@@ -48,6 +48,7 @@ public class examine_applicants extends AppCompatActivity {
 
     StorageReference ref;
     public String nicp;
+    public String UID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class examine_applicants extends AppCompatActivity {
         in_experience = findViewById(R.id.txtview_experience);
         in_description = findViewById(R.id.txtview_description);
         in_qualifications = findViewById(R.id.txtview_qualifications);
-        in_marks =findViewById(R.id.txtview_totmarks);
+        in_marks = findViewById(R.id.txtview_totmarks);
         in_remarks =(EditText) findViewById(R.id.edittxt_remarks);
 
 
@@ -90,6 +91,7 @@ public class examine_applicants extends AppCompatActivity {
         String qualificationsP = i.getStringExtra("vQualification");
         String remarksP = i.getStringExtra("vRemarks");
         nicp = i.getStringExtra("vNic");
+        UID = i.getStringExtra("vID");
 
         in_jobtitle.setText(String.valueOf(jobtitleP));
         in_name.setText(String.valueOf(nameP));
@@ -152,9 +154,9 @@ public class examine_applicants extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Marks fields cannot be empty!!!", Toast.LENGTH_LONG).show();
                 else {
 
-                    dbref.child("User_Req_Job/" + nicp + "/marks").setValue(Integer.parseInt(in_marks.getText().toString()));
-                    dbref.child("User_Req_Job/" + nicp + "/remarks").setValue(in_remarks.getText().toString());
-                    dbref.child("User_Req_Job/" + nicp + "/status").setValue(status);
+                    dbref.child("User_Req_Job/" + UID + "/marks").setValue(Integer.parseInt(in_marks.getText().toString()));
+                    dbref.child("User_Req_Job/" + UID + "/remarks").setValue(in_remarks.getText().toString());
+                    dbref.child("User_Req_Job/" + UID + "/status").setValue(status);
 
                     Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
                     clearBox();
