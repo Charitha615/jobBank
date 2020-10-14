@@ -15,10 +15,17 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 
 import java.util.List;
-
 public class adapterApplications extends FirebaseRecyclerAdapter <modelApplications, adapterApplications.appViewHolder> {
 
     private RecyclerViewClickListener listener;
+    public static int totalCardsCount;
+    myApplicationFragment mf;
+
+ /*   public static RecyclerViewClickListener recyclerViewClickListener;
+
+    public void setOnRecyclerViewClickListener(RecyclerViewClickListener recyclerViewClickListener) {
+        this.recyclerViewClickListener = recyclerViewClickListener;
+    }*/
 
     public adapterApplications(@NonNull FirebaseRecyclerOptions<modelApplications> options, RecyclerViewClickListener listener) {
         super(options);
@@ -29,7 +36,9 @@ public class adapterApplications extends FirebaseRecyclerAdapter <modelApplicati
     protected void onBindViewHolder(@NonNull appViewHolder holder, int position, @NonNull modelApplications model) {
         holder.position.setText(model.getPosition());
         holder.company.setText(model.getCompany());
-    }
+        totalCardsCount = position;
+
+       }
 
     public class appViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
@@ -48,7 +57,10 @@ public class adapterApplications extends FirebaseRecyclerAdapter <modelApplicati
         }
     }
 
-    public interface RecyclerViewClickListener { void onClick(View v, int position);}
+    public interface RecyclerViewClickListener {
+
+        void onClick(View v, int position);
+    }
 
     @NonNull
     @Override
@@ -57,11 +69,12 @@ public class adapterApplications extends FirebaseRecyclerAdapter <modelApplicati
         return new appViewHolder(view);
     }
 
-    @Override
+   /* @Override
     public int getItemCount() {
 
-        return super.getItemCount();
-    }
+        super.getItemCount();
+        return totalCardsCount;
+    }*/
 
 
 }

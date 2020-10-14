@@ -57,7 +57,7 @@ public class view_applications extends AppCompatActivity {
 
 
         if (checkStatus(stts)){
-            btn_view.setEnabled(false);
+            btn_view.setEnabled(true);
         }
 
         img_back1.setOnClickListener(new View.OnClickListener() {

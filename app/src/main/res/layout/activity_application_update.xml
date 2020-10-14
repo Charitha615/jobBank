@@ -219,23 +219,23 @@
 
     <Button
         android:id="@+id/update"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_below="@+id/cvDetail"
         android:background="@drawable/rounded_corners"
         android:text="@string/updateBtn"
         android:textSize="15sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"/>
 
     <Button
         android:id="@+id/remove"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="40dp"
         android:layout_below="@+id/cvDetail"
         android:background="@drawable/rounded_corners"
         android:text="@string/delete"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/update"
         android:layout_marginLeft="20dp"/>
 

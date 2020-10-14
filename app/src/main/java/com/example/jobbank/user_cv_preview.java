@@ -1,12 +1,14 @@
 package com.example.jobbank;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -21,8 +23,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -40,6 +46,8 @@ public class user_cv_preview extends AppCompatActivity {
     FirebaseDatabase database;
     Uri pdfUri; //
     ProgressDialog progressDialog;
+    long maxid = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,11 +145,25 @@ public class user_cv_preview extends AppCompatActivity {
             }
         });
 ////////////////////////////////////////////INSERT AND CV UPLOAD/////////////////////////////////////////////////
+        dbref = FirebaseDatabase.getInstance().getReference().child("User_Req_Job");
+
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    maxid = (snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         confirm_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                dbref = FirebaseDatabase.getInstance().getReference().child("User_Req_Job");
+
                 if(pdfUri!=null)
                 {
                     uploadFile(pdfUri); // Upload CV
@@ -160,9 +182,10 @@ public class user_cv_preview extends AppCompatActivity {
                 std.setStatus("Initial");
                 std.setMarks(0);
                 std.setRemarks("None");
-                dbref.child(Nic_number.getText().toString().trim()).setValue(std);
+                //dbref.child(Nic_number.getText().toString().trim()).setValue(std);
+                dbref.child(String.valueOf(Nic_number.getText().toString().trim() +"_COUNT_"+(maxid+1))).setValue(std);
 
-                Toast.makeText(getApplicationContext(),"Your Data Inserted",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Your Data Inserted",Toast.LENGTH_SHORT).show();
 
 
 
@@ -185,6 +208,7 @@ public class user_cv_preview extends AppCompatActivity {
         progressDialog.setProgress(0);
         progressDialog.show();
 
+
         final String fileName = Nic_number_in;
         StorageReference storageReference = storage.getReference(); // return path
 
@@ -201,12 +225,28 @@ public class user_cv_preview extends AppCompatActivity {
                                 if(task.isSuccessful())
                                 {
                                     Toast.makeText(getApplicationContext(),"File is successfuly uploaded",Toast.LENGTH_LONG).show();
+                                    progressDialog.dismiss();
+                                    ///////////////////////////AlertBox/////////////////////////////
+                                    final AlertDialog.Builder builder = new AlertDialog.Builder(user_cv_preview.this);
+                                    builder.setMessage("Do you want to go to the Home page?")
+                                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialogInterface, int i) {
 
+                                                    Intent inte = new Intent(getApplicationContext(), user_home.class);
+                                                    startActivity(inte);
+                                                }
+                                            })
+                                            .setNegativeButton("Cancel", null);
+
+                                    AlertDialog alert = builder.create();
+                                    alert.show();
+                                    ////////////////////////////////////////////////////////
                                 }
                                 else
                                 {
                                     Toast.makeText(getApplicationContext(),"File is not successfuly uploaded",Toast.LENGTH_LONG).show();
-
+                                    progressDialog.dismiss();
                                 }
                             }
                         });

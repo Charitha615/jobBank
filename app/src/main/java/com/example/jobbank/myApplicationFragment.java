@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -24,6 +25,7 @@ public class myApplicationFragment extends Fragment {
 
     RecyclerView recViewApps;
     TextView noOfApps;
+    Button viewApps;
     adapterApplications adapter;
     adapterApplications.RecyclerViewClickListener listener;
     FirebaseRecyclerOptions<modelApplications> options;
@@ -84,19 +86,35 @@ public class myApplicationFragment extends Fragment {
 
         recViewApps = (RecyclerView)getView().findViewById(R.id.appRecView);
         noOfApps = (TextView) getView().findViewById(R.id.numberOfApps);
+        viewApps = (Button) getView().findViewById(R.id.view_No_Apps);
 
         LinearLayoutManager linearLayoutManager = (new LinearLayoutManager(getActivity().getApplicationContext()));
         recViewApps.setLayoutManager(linearLayoutManager);
 
         options =
                 new FirebaseRecyclerOptions.Builder<modelApplications>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("User_Req_Job"), modelApplications.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("User_Req_Job").orderByChild("nic_number").equalTo("14444444V"), modelApplications.class)
                         .build();
 
         adapter = new adapterApplications(options,listener);
         recViewApps.setAdapter(adapter);
-        noOfApps.setText(String.valueOf(recViewApps.getAdapter().getItemCount()));
+
+
+        //com.example.jobbank.adapterApplications.totalCardsCount)
+
+        //noOfApps.setText(String.valueOf(adapter.getItemCount()));
+
+        viewApps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noOfApps.setText(String.valueOf(com.example.jobbank.adapterApplications.totalCardsCount + 1));
+            }
+        });
     }
+
+    /*public void function(){
+        noOfApps.setText(String.valueOf(com.example.jobbank.adapterApplications.totalCardsCount));
+    }*/
 
     private void setOnClickListener() {
         listener = new adapterApplications.RecyclerViewClickListener() {
