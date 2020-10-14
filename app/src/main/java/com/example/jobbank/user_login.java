@@ -55,6 +55,7 @@ public class user_login extends AppCompatActivity {
         INSTANCE=this;
 
 
+
         user_sign = findViewById(R.id.signuplink);
 
         Login_User = FirebaseAuth.getInstance();

@@ -2,11 +2,27 @@ package com.example.jobbank;
 
 public class cv_uploader_java {
 
-    private String full_name,nic_number,email,phone,experience,age,description,qualifications,closingDate,company,position,vacancyStatus,remarks,status;
+    private String full_name,nic_number,email,phone,experience,age,description,qualifications,closingDate,company,position,vacancyStatus,remarks,status,userID,uploderID;
     private  int marks;
 
     public cv_uploader_java() {
 
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public String getUploderID() {
+        return uploderID;
+    }
+
+    public void setUploderID(String uploderID) {
+        this.uploderID = uploderID;
     }
 
     public String getRemarks() {

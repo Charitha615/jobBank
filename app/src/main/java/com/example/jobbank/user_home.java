@@ -161,7 +161,19 @@ public class user_home extends AppCompatActivity {
             @Override
             public void onClick(View v, int position) {
 
-                startActivity(new Intent(getApplicationContext(),user_add_cv.class));
+                //startActivity(new Intent(getApplicationContext(),user_add_cv.class));
+                Intent i = new Intent(getApplicationContext(),user_add_cv.class);
+
+                i.putExtra("JOB_TITLE",options.getSnapshots().get(position).getJobTitle());
+                i.putExtra("COMPANY_NAME",options.getSnapshots().get(position).getCompanyName());
+                i.putExtra("QUALIFICATION1",options.getSnapshots().get(position).getQualification());
+                i.putExtra("AGE_LIMIT",options.getSnapshots().get(position).getAgeLimit());
+                i.putExtra("DESCRIPTION1",options.getSnapshots().get(position).getDescription());
+                i.putExtra("CLOSING_DATE",options.getSnapshots().get(position).getClosingDate());
+                i.putExtra("JOB_TYPE",options.getSnapshots().get(position).getJobType());
+
+
+                startActivity(i);
 
             }
         };
