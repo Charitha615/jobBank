@@ -58,7 +58,7 @@ public class ExampleUnitTest {
     //Ayeshka's Testing Part
     @Test
     public void YearsOfExp_NoOfDigits(){
-        String Check_Years = publish_a_vacancy.validExp(115);
+        String Check_Years = publish_a_vacancy.Check_Experience(115);
         assertEquals("Invalid",Check_Years);
     }
 
