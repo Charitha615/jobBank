@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User_Interested_list">
+
+    <LinearLayout
+        android:id="@+id/upper01"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="horizontal"
+        android:background="@drawable/background">
+
+        <ImageView
+            android:id="@+id/backinter"
+            android:layout_width="51dp"
+            android:layout_height="46dp"
+            app:srcCompat="@drawable/back"
+            android:layout_marginTop="6dp"/>
+
+        <ImageView
+            android:id="@+id/imageView_inter"
+            android:layout_width="117dp"
+            android:layout_height="159dp"
+            android:layout_marginLeft="-23dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/star_change" />
+
+        <TextView
+            android:id="@+id/interested_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="My Interested List"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inter_body"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/upper01">
+
+        <TextView
+            android:id="@+id/inter_recent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Interested"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/intersted_RecView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

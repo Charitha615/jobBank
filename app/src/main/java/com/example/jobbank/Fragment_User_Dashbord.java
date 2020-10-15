@@ -20,6 +20,7 @@ import android.widget.Button;
 public class Fragment_User_Dashbord extends Fragment {
     Intent Uprofile;
     Intent bkmrk;
+    Intent inter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,6 +79,9 @@ public class Fragment_User_Dashbord extends Fragment {
         final Button bookmark = (Button) rootView.findViewById(R.id.bookmark_btn);
         bkmrk = new Intent(getActivity(), user_bookmarks.class);
 
+        final Button interest = (Button) rootView.findViewById(R.id.Interest);
+        inter = new Intent(getActivity(), User_Interested_list.class);
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +95,15 @@ public class Fragment_User_Dashbord extends Fragment {
                 startActivity(bkmrk);
             }
         });
+        
+        interest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(inter);
+
+            }
+        });
+
         return rootView;
     }
 }

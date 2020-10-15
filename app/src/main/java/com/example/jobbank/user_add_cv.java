@@ -38,7 +38,9 @@ public class user_add_cv extends AppCompatActivity {
     ImageButton interested;
     DatabaseReference dbref;
     long maxid = 0;
+    String data2;
 
+    Interested_Model inter_model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,32 +59,7 @@ public class user_add_cv extends AppCompatActivity {
         age = findViewById(R.id.cv_age_input);
         description1 = findViewById(R.id.cv_description_input);
         qualification1 = findViewById(R.id.cv_qualification_input);
-        /////////////////////////////////////////////Interested list//////////////////////////////////////////////////////
 
-        dbref = FirebaseDatabase.getInstance().getReference().child("User_Interested");
-
-
-        dbref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists())
-                    maxid = (snapshot.getChildrenCount());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        interested.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-            }
-        });
 
 
 
@@ -101,8 +78,8 @@ public class user_add_cv extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String COM_NAMEIN = intent.getStringExtra("COMPANY_NAME");
-        String JOB_TITLEIN = intent.getStringExtra("JOB_TITLE");
+        final String COM_NAMEIN = intent.getStringExtra("COMPANY_NAME");
+        final String JOB_TITLEIN = intent.getStringExtra("JOB_TITLE");
         String QUALIFICATIONIN = intent.getStringExtra("QUALIFICATION1");
         String AGE_LIMITIN = intent.getStringExtra("AGE_LIMIT");
         String DESCRIPTIONIN = intent.getStringExtra("DESCRIPTION1");
@@ -121,6 +98,44 @@ public class user_add_cv extends AppCompatActivity {
 
 
 
+
+
+/////////////////////////////////////////////Interested list//////////////////////////////////////////////////////
+        inter_model = new Interested_Model();
+        dbref = FirebaseDatabase.getInstance().getReference().child("User_Interested");
+
+        data2=user_login.getActivityInstance().getData();
+        //data2 = "4OruyYujvbU3jdOOtlgOwN3pbpp1";
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    maxid = (snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        interested.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                inter_model.setUserID(data2);
+                inter_model.setCompanyName(COM_NAMEIN);
+                inter_model.setJobTitle(JOB_TITLEIN);
+
+                String childd = (String.valueOf(data2 +"_COUNT_"+(maxid+1))); //GET UPLODER ID
+               dbref.child(childd).setValue(inter_model);
+
+
+                Toast.makeText(getApplicationContext(),"Add to Interested List",Toast.LENGTH_LONG).show();
+
+
+            }
+        });
 
 
 
