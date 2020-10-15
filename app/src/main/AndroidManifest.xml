@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".Company_home" />
         <activity android:name=".Company_Profile" >
 
         </activity>
@@ -30,7 +30,7 @@
         <activity android:name=".company_bookmarked_list" />
         <activity android:name=".company_interested_list" />
         <activity android:name=".edit_vacancy" />
-        <activity android:name=".Company_home" />
+        <activity android:name=".SplashActivity" />
         <activity android:name=".view_published_vacancies" />
         <activity android:name=".view_vacancy" />
         <activity android:name=".examine_applicants" />
