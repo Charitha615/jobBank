@@ -74,6 +74,16 @@ public class application_update extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(in_id.getText().toString()))
                     Toast.makeText(getApplicationContext(), "Check Your ID", Toast.LENGTH_LONG).show();
+                else if(TextUtils.isEmpty(in_fName.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Check Your Name", Toast.LENGTH_LONG).show();
+                else if(TextUtils.isEmpty(in_email.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Check Your Email", Toast.LENGTH_LONG).show();
+                else if(TextUtils.isEmpty(in_phone.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Check Your Contact Number", Toast.LENGTH_LONG).show();
+                else if(TextUtils.isEmpty(in_age.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Check Your Age", Toast.LENGTH_LONG).show();
+                else if(TextUtils.isEmpty(in_qua.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Check Your Qualifications", Toast.LENGTH_LONG).show();
 
                 else {
                     dbref = FirebaseDatabase.getInstance().getReference();
