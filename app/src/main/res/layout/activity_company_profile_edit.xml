@@ -55,7 +55,7 @@
             android:width="300dp"
             android:paddingLeft="5dp"
             android:layout_marginLeft="15dp"
-            android:hint="Create Economic opporttunity for every member of the global work force. "
+            android:hint="Create Economic opportunity for every member of the global work force. "
             android:textSize="15dp"/>
     </LinearLayout>
 
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:width="300dp"
         android:paddingLeft="5dp"
-        android:hint="Create Economic opporttunity for every member of the global work force. "
+        android:hint="Create Economic opportunity for every member of the global work force. "
         android:textSize="15dp"/>
 </LinearLayout>
 
