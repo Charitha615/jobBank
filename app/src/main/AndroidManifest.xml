@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Company_Profile"></activity>
+        <activity android:name=".user_add_cv"></activity>
 
 
-        <activity android:name=".SplashActivity">
+        <activity android:name=".publish_a_vacancy">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,12 +26,12 @@
         <activity android:name=".user_home" />
         <activity android:name=".user_account" />
         <activity android:name=".pub_a_vacancy" />
-        <activity android:name=".publish_a_vacancy" />
+        <activity android:name=".view_published_vacancies" />
         <activity android:name=".company_bookmarked_list" />
         <activity android:name=".company_interested_list" />
         <activity android:name=".edit_vacancy" />
         <activity android:name=".Company_home" />
-        <activity android:name=".view_published_vacancies" />
+        <activity android:name=".Company_Profile" />
         <activity android:name=".view_vacancy" />
         <activity android:name=".examine_applicants" />
         <activity android:name=".view_applicant" />
@@ -40,7 +40,7 @@
         <activity android:name=".application_update" />
         <activity android:name=".view_applications" />
         <activity android:name=".user_bookmarks" />
-        <activity android:name=".user_add_cv" />
+        <activity android:name=".SplashActivity" />
         <activity android:name=".user_cv_preview" />
         <activity android:name=".com_register_2" />
         <activity android:name=".com_register_1" />

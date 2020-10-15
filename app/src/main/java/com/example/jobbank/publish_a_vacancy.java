@@ -38,6 +38,7 @@ public class publish_a_vacancy extends AppCompatActivity {
     ImageView back;
     pubVacancy pubVacancy_;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +74,7 @@ public class publish_a_vacancy extends AppCompatActivity {
 
         publishBtn = findViewById(R.id.publishBtn);
 
+
         publishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,8 +82,8 @@ public class publish_a_vacancy extends AppCompatActivity {
 
                 //getUserData();
 
-                Intent i = new Intent(getApplicationContext(), view_published_vacancies.class);
-                startActivity(i);
+//                Intent i = new Intent(getApplicationContext(), view_published_vacancies.class);
+//                startActivity(i);
 
                 try {
                     if(TextUtils.isEmpty(companyName.getText().toString())) //Check ID Is Empty
@@ -108,27 +110,50 @@ public class publish_a_vacancy extends AppCompatActivity {
 
                     else
                     {
-                        pubVacancy_.setJobTitle(jobTitle.getText().toString().trim()); //Trim is Remove the Spaces in text fields
-                        pubVacancy_.setDescription(description.getText().toString().trim());
-                        pubVacancy_.setQualification(qualification.getText().toString().trim());
-                        pubVacancy_.setDepartment(department.getText().toString().trim()); //Trim is Remove the Spaces in text fields
-                        pubVacancy_.setYrsOfExp(yearsOfExp.getText().toString().trim());
-                        pubVacancy_.setAgeLimit(ageLimit.getText().toString().trim());
-                        pubVacancy_.setJobType(jobType.getText().toString().trim()); //Trim is Remove the Spaces in text fields
-                        pubVacancy_.setClosingDate(closingDate.getText().toString().trim());
-                        pubVacancy_.setCompanyName(companyName.getText().toString().trim());
-                        pubVacancy_.setVacancyId(vacancyid.getText().toString().trim());
-                        pubVacancy_.setPublishedDate(pubdate);
-                        dbRef.child(vacancyid.getText().toString().trim()).setValue(pubVacancy_);
-                        Toast.makeText(getApplicationContext(),"Successfully Inserted",Toast.LENGTH_SHORT).show();
-                        clearBox();
-                        pubVacancy_.setPublishedDate(pubdate);
-                        pubVacancy_.setPublishedID(String.valueOf(pubVacancy_));
-                        dbRef.push().setValue(pubVacancy_);
+                        //saving years of experience as an Integer value
+                        int result = Integer.parseInt(yearsOfExp.getText().toString());
 
-                        Toast.makeText(getApplicationContext(),"Successfully Inserted",Toast.LENGTH_SHORT).show();
-                        clearBox();
+                        //getting age limit into a integer
+                        int value = Integer.parseInt(ageLimit.getText().toString().trim());
 
+                        //Passing a parameter to the validExp function
+                        String result2 = validExp(result);
+                        String value2 = CheckAge(value);
+
+                        if (result2 == "Invalid"){
+                            Toast.makeText(getApplicationContext(),"Invalid Years Of Experience",Toast.LENGTH_SHORT).show();
+                        }
+
+                        else if (value2 == "Error"){
+                            Toast.makeText(getApplicationContext(),"Please recheck age limit",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+
+                            pubVacancy_.setJobTitle(jobTitle.getText().toString().trim()); //Trim is Remove the Spaces in text fields
+                            pubVacancy_.setDescription(description.getText().toString().trim());
+                            pubVacancy_.setQualification(qualification.getText().toString().trim());
+                            pubVacancy_.setDepartment(department.getText().toString().trim()); //Trim is Remove the Spaces in text fields
+                            pubVacancy_.setYrsOfExp(yearsOfExp.getText().toString().trim());
+                            pubVacancy_.setAgeLimit(ageLimit.getText().toString().trim());
+                            pubVacancy_.setJobType(jobType.getText().toString().trim()); //Trim is Remove the Spaces in text fields
+                            pubVacancy_.setClosingDate(closingDate.getText().toString().trim());
+                            pubVacancy_.setCompanyName(companyName.getText().toString().trim());
+                            pubVacancy_.setVacancyId(vacancyid.getText().toString().trim());
+                            pubVacancy_.setPublishedDate(pubdate);
+                            dbRef.child(vacancyid.getText().toString().trim()).setValue(pubVacancy_);
+                            Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
+                            clearBox();
+                            pubVacancy_.setPublishedDate(pubdate);
+                            pubVacancy_.setPublishedID(String.valueOf(pubVacancy_));
+                            //dbRef.push().setValue(pubVacancy_);
+
+
+                            Toast.makeText(getApplicationContext(), "Successfully Inserted", Toast.LENGTH_SHORT).show();
+                            clearBox();
+
+                            Intent i = new Intent(getApplicationContext(), view_published_vacancies.class);
+                            startActivity(i);
+                        }
                     }
                 }
                 catch (NumberFormatException ex){
@@ -152,9 +177,31 @@ public class publish_a_vacancy extends AppCompatActivity {
             }
 
 
+
         });
 
 
 
+    }
+
+
+    //function to check years of experience
+    public static String validExp(int Exp){
+        if(Exp >= 80){
+            //Toast.makeText("Invalid Years Of Experience",Toast.LENGTH_SHORT).show();
+            //Exp = "Invalid Years Of Experience";
+            return "Invalid";
+        }
+        else
+            return "Valid";
+
+    }
+
+    public static String CheckAge(int ageLimit1){
+        if(ageLimit1 >= 70){
+            return "Error";
+        }
+        else
+            return "Valid";
     }
 }
