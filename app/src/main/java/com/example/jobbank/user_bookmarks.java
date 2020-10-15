@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,6 +20,7 @@ public class user_bookmarks extends AppCompatActivity {
     adapter_bookmarks adapter;
     FirebaseRecyclerOptions<modelBookmarks> options;
     String data;
+    ImageView back_img;
     com.google.android.material.floatingactionbutton.FloatingActionButton addNew;
 
     @Override
@@ -26,6 +28,7 @@ public class user_bookmarks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_bookmarks);
 
+        back_img = findViewById(R.id.img_back);
         data=user_login.getActivityInstance().getData();
         recViewb = findViewById(R.id.bookmarksRecView);
         addNew = findViewById(R.id.add);
@@ -45,6 +48,13 @@ public class user_bookmarks extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), user_home.class);
                 startActivity(i);
+            }
+        });
+
+        back_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

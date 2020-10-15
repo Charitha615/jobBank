@@ -15,7 +15,7 @@
         android:background="@drawable/background">
 
         <ImageView
-            android:id="@+id/backBookmarks"
+            android:id="@+id/img_back"
             android:layout_width="51dp"
             android:layout_height="46dp"
             app:srcCompat="@drawable/back"
