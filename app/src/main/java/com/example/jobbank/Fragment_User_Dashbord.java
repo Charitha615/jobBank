@@ -21,6 +21,7 @@ public class Fragment_User_Dashbord extends Fragment {
     Intent Uprofile;
     Intent bkmrk;
     Intent inter;
+    Intent logout;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -82,10 +83,20 @@ public class Fragment_User_Dashbord extends Fragment {
         final Button interest = (Button) rootView.findViewById(R.id.Interest);
         inter = new Intent(getActivity(), User_Interested_list.class);
 
+        final Button logOut = (Button) rootView.findViewById(R.id.user_logout);
+        logout = new Intent(getActivity(), user_login.class);
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(Uprofile);
+            }
+        });
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(logout);
             }
         });
 
