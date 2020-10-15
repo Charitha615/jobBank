@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     view_applications v;
+    examine_applicants e;
     @Test
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
@@ -30,6 +31,24 @@ public class ExampleUnitTest {
         boolean b = v.checkStatus("Rejected");
         assertEquals(false, b);
 
+    }
+
+    @Test
+    public void status_is_correct_interview(){
+        String status = examine_applicants.setStatus(39);
+        assertEquals("Interview", status);
+    }
+
+    @Test
+    public void status_is_correct_pending(){
+        String status = examine_applicants.setStatus(29);
+        assertEquals("Pending", status);
+    }
+
+    @Test
+    public void status_is_correct_rejected(){
+        String status = examine_applicants.setStatus(9);
+        assertEquals("Rejected", status);
     }
 
 }

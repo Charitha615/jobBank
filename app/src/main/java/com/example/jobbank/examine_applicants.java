@@ -34,6 +34,7 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class examine_applicants extends AppCompatActivity {
 
+    private static String status1;
     TextView in_name,in_jobtitle,in_email,in_age,in_experience,in_description,in_qualifications,in_marks,in_totalMarks;
     EditText in_remarks,in_marks1,in_marks2,in_marks3,in_marks4;
     Button btn_calc_tot, btn_save,btn_interview,btn_pending,btn_rejected,btn_delete,btn_cv;
@@ -47,6 +48,7 @@ public class examine_applicants extends AppCompatActivity {
 
     StorageReference ref;
     public String nicp;
+    public String UID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +76,7 @@ public class examine_applicants extends AppCompatActivity {
         in_experience = findViewById(R.id.txtview_experience);
         in_description = findViewById(R.id.txtview_description);
         in_qualifications = findViewById(R.id.txtview_qualifications);
-        in_marks =findViewById(R.id.txtview_totmarks);
+        in_marks = findViewById(R.id.txtview_totmarks);
         in_remarks =(EditText) findViewById(R.id.edittxt_remarks);
 
 
@@ -89,6 +91,7 @@ public class examine_applicants extends AppCompatActivity {
         String qualificationsP = i.getStringExtra("vQualification");
         String remarksP = i.getStringExtra("vRemarks");
         nicp = i.getStringExtra("vNic");
+        UID = i.getStringExtra("vID");
 
         in_jobtitle.setText(String.valueOf(jobtitleP));
         in_name.setText(String.valueOf(nameP));
@@ -114,8 +117,8 @@ public class examine_applicants extends AppCompatActivity {
                 else if ((Integer.parseInt(in_marks1.getText().toString())>10) || (Integer.parseInt(in_marks2.getText().toString())>10) || (Integer.parseInt(in_marks3.getText().toString())>10) || (Integer.parseInt(in_marks4.getText().toString())>10))
                     Toast.makeText(getApplicationContext(), "Marks should be given out of 10", Toast.LENGTH_LONG).show();
                 else{
-                    total = Integer.parseInt(in_marks1.getText().toString()) + Integer.parseInt(in_marks2.getText().toString()) + Integer.parseInt(in_marks3.getText().toString()) + Integer.parseInt(in_marks4.getText().toString());
-                    in_totalMarks.setText(String.valueOf(total));
+                    calcTot();
+                    status = setStatus(total);
                 }
             }
         });
@@ -151,9 +154,9 @@ public class examine_applicants extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Marks fields cannot be empty!!!", Toast.LENGTH_LONG).show();
                 else {
 
-                    dbref.child("User_Req_Job/" + nicp + "/marks").setValue(Integer.parseInt(in_marks.getText().toString()));
-                    dbref.child("User_Req_Job/" + nicp + "/remarks").setValue(in_remarks.getText().toString());
-                    dbref.child("User_Req_Job/" + nicp + "/status").setValue(status);
+                    dbref.child("User_Req_Job/" + UID + "/marks").setValue(Integer.parseInt(in_marks.getText().toString()));
+                    dbref.child("User_Req_Job/" + UID + "/remarks").setValue(in_remarks.getText().toString());
+                    dbref.child("User_Req_Job/" + UID + "/status").setValue(status);
 
                     Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
                     clearBox();
@@ -189,6 +192,24 @@ public class examine_applicants extends AppCompatActivity {
                 alert.show();
             }
         });
+    }
+
+    private void calcTot() {
+        total = Integer.parseInt(in_marks1.getText().toString()) + Integer.parseInt(in_marks2.getText().toString()) + Integer.parseInt(in_marks3.getText().toString()) + Integer.parseInt(in_marks4.getText().toString());
+        in_totalMarks.setText(String.valueOf(total));
+    }
+
+    public static String setStatus(int marks){
+        if(marks >= 30){
+            status1 = "Interview";
+        }
+        else if(marks >= 15){
+            status1 = "Pending";
+        }
+        else{
+            status1 = "Rejected";
+        }
+        return status1;
     }
 
     private void clearBox()

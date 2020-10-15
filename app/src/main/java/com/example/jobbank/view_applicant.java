@@ -77,6 +77,7 @@ public class view_applicant extends AppCompatActivity {
                 intent.putExtra("vDescription", options.getSnapshots().get(position).getDescription());
                 intent.putExtra("vQualification", options.getSnapshots().get(position).getQualifications());
                 intent.putExtra("vRemarks", options.getSnapshots().get(position).getRemarks());
+                intent.putExtra("vID", options.getSnapshots().get(position).getUploderID());
                 startActivity(intent);
             }
         };

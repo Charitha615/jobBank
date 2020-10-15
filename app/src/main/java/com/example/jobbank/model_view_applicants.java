@@ -2,13 +2,13 @@ package com.example.jobbank;
 
 public class model_view_applicants {
 
-    private String full_name,nic_number,email,phone,experience,age,description,qualifications,closingDate,company,position,vacancyStatus,remarks,status;
+    private String full_name,nic_number,email,phone,experience,age,description,qualifications,closingDate,company,position,vacancyStatus,remarks,status,uploderID;
     private  int marks;
 
     public model_view_applicants() {
     }
 
-    public model_view_applicants(String full_name, String nic_number, String email, String phone, String experience, String age, String description, String qualifications, String closingDate, String company, String position, String vacancyStatus, String remarks, String status, int marks) {
+    public model_view_applicants(String full_name, String nic_number, String email, String phone, String experience, String age, String description, String qualifications, String closingDate, String company, String position, String vacancyStatus, String remarks, String status, int marks, String uploderID) {
         this.full_name = full_name;
         this.nic_number = nic_number;
         this.email = email;
@@ -24,6 +24,15 @@ public class model_view_applicants {
         this.remarks = remarks;
         this.status = status;
         this.marks = marks;
+        this.uploderID = uploderID;
+    }
+
+    public String getUploderID() {
+        return uploderID;
+    }
+
+    public void setUploderID(String uploderID) {
+        this.uploderID = uploderID;
     }
 
     public String getRemarks() {

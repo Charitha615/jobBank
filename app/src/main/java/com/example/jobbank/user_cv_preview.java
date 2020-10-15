@@ -48,6 +48,8 @@ public class user_cv_preview extends AppCompatActivity {
     ProgressDialog progressDialog;
     long maxid = 0;
 
+    String data;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,8 @@ public class user_cv_preview extends AppCompatActivity {
         edit_btn =findViewById(R.id.Edit_btn_cv_pre);
         std = new cv_uploader_java(); // call the Java class
 
+
+        data = user_login.getActivityInstance().getData();
 
         ///////////////////////////////UPLOAD CV////////////////////////////////////////////
 
@@ -182,8 +186,16 @@ public class user_cv_preview extends AppCompatActivity {
                 std.setStatus("Initial");
                 std.setMarks(0);
                 std.setRemarks("None");
-                //dbref.child(Nic_number.getText().toString().trim()).setValue(std);
-                dbref.child(String.valueOf(Nic_number.getText().toString().trim() +"_COUNT_"+(maxid+1))).setValue(std);
+
+                String childd = (String.valueOf(Nic_number.getText().toString().trim() +"_COUNT_"+(maxid+1))); //GET UPLODER ID
+                std.setUploderID(childd);
+
+
+                std.setUserID(data);
+
+                    //dbref.child(Nic_number.getText().toString().trim()).setValue(std);
+               // dbref.child(String.valueOf(Nic_number.getText().toString().trim() +"_COUNT_"+(maxid+1))).setValue(std);
+                dbref.child(childd).setValue(std);
 
                     Toast.makeText(getApplicationContext(),"Your Data Inserted",Toast.LENGTH_SHORT).show();
 
