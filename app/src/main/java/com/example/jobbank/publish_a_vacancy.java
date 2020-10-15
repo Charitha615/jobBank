@@ -105,7 +105,7 @@ public class publish_a_vacancy extends AppCompatActivity {
                     else if(TextUtils.isEmpty(closingDate.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Error in Closing Date",Toast.LENGTH_LONG).show();
                     else if(TextUtils.isEmpty(vacancyid.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Error in Closing Date",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Error in Vacancy ID",Toast.LENGTH_LONG).show();
 
 
                     else
