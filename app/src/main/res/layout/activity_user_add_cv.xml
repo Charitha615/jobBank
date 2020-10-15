@@ -51,6 +51,22 @@
                 android:textColor="#000000"
                 android:textStyle="bold"/>
 
+<!--            <ImageButton-->
+<!--                android:id="@+id/star_btn_01"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:background="#FFFFFF"-->
+<!--                app:srcCompat="@drawable/star_change" />-->
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:id="@+id/star_btn_01"
+                android:background="#FFFFFF"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/star_change"/>
+
+
 
         </LinearLayout>
 
