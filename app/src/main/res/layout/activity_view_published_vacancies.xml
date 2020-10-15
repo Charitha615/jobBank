@@ -9,15 +9,23 @@
     android:id="@+id/Rid"
     android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/jobTitle"
+    <RelativeLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/viewjobs"
-        android:textColor="#1C33AC"
-        android:textSize="50dp"
-        android:layout_marginLeft="70dp"/>
+        android:layout_height="70dp"
+        android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/jobTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/viewjobs"
+            android:textColor="@android:color/background_dark"
+            android:textSize="40dp" />
+
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/jobTitleRecView"

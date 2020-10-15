@@ -332,7 +332,7 @@
                 app:srcCompat="@drawable/location" />
 
             <TextView
-                android:id="@+id/address----"
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -356,7 +356,7 @@
                 app:srcCompat="@drawable/mobile_number" />
 
             <TextView
-                android:id="@+id/mobile----"
+                android:id="@+id/mobile"
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
