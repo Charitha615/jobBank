@@ -42,6 +42,9 @@ public class user_add_cv extends AppCompatActivity {
 
     Interested_Model inter_model;
 
+
+    TextView Company_profile_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +64,17 @@ public class user_add_cv extends AppCompatActivity {
         qualification1 = findViewById(R.id.cv_qualification_input);
 
 
+        Company_profile_btn=findViewById(R.id.com_address_in);
+
+        Company_profile_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go = new Intent(getApplicationContext(),Company_Profile.class);
+
+
+                startActivity(go);
+            }
+        });
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////
