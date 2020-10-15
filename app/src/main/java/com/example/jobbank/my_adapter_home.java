@@ -1,11 +1,14 @@
 package com.example.jobbank;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +33,7 @@ public class my_adapter_home extends FirebaseRecyclerAdapter<Model_Home,my_adapt
 
     }
 
+
     @NonNull
     @Override
     public myViewHolderHome onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,6 +46,7 @@ public class my_adapter_home extends FirebaseRecyclerAdapter<Model_Home,my_adapt
 
         ImageView logo;
         TextView com_name_,job_Title;
+        ImageButton interested;
 
         public myViewHolderHome(@NonNull View itemView) {
             super(itemView);
@@ -49,6 +54,8 @@ public class my_adapter_home extends FirebaseRecyclerAdapter<Model_Home,my_adapt
             logo =(ImageView) itemView.findViewById(R.id.com_logo_in);
             com_name_ = (TextView) itemView . findViewById(R.id.com_name);
             job_Title = (TextView) itemView . findViewById(R.id.job_Title_);
+            interested = (ImageButton) itemView . findViewById(R.id.star_btn_1);
+
 
             itemView.setOnClickListener(this);
 
@@ -57,7 +64,6 @@ public class my_adapter_home extends FirebaseRecyclerAdapter<Model_Home,my_adapt
         @Override
         public void onClick(View view) {
             listener.onClick(view, getAdapterPosition());
-         //   startActivity(new Intent(getActivity().getApplicationContext(),user_add_cv.class));
 
         }
     }

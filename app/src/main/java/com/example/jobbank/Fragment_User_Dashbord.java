@@ -19,6 +19,7 @@ import android.widget.Button;
  */
 public class Fragment_User_Dashbord extends Fragment {
     Intent Uprofile;
+    Intent bkmrk;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,16 +68,27 @@ public class Fragment_User_Dashbord extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment__user__dashbord, container, false);
+        //bkmrk = (Button) getView().findViewById(R.id.bookmark_btn);
 
         View rootView= inflater.inflate(R.layout.fragment__user__dashbord, container, false);
 
         final Button profile = (Button) rootView.findViewById(R.id.user_profile);
         Uprofile = new Intent(getActivity(), user_account.class);
 
+        final Button bookmark = (Button) rootView.findViewById(R.id.bookmark_btn);
+        bkmrk = new Intent(getActivity(), user_bookmarks.class);
+
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(Uprofile);
+            }
+        });
+
+        bookmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(bkmrk);
             }
         });
         return rootView;

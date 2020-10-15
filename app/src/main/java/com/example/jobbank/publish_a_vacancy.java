@@ -124,7 +124,7 @@ public class publish_a_vacancy extends AppCompatActivity {
                         clearBox();
                         pubVacancy_.setPublishedDate(pubdate);
                         pubVacancy_.setPublishedID(String.valueOf(pubVacancy_));
-                        dbRef.push().setValue(pubVacancy_);
+                        //dbRef.push().setValue(pubVacancy_);
 
                         Toast.makeText(getApplicationContext(),"Successfully Inserted",Toast.LENGTH_SHORT).show();
                         clearBox();

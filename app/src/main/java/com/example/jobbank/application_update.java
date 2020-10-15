@@ -56,6 +56,7 @@ public class application_update extends AppCompatActivity {
         String ageP = i.getStringExtra("agePass");
         String desP = i.getStringExtra("desPass");
         String quaP = i.getStringExtra("quaPass");
+        final String upldP = i.getStringExtra("upldPass");
 
         in_fName.setText(String.valueOf(fnameP));
         in_id.setText(String.valueOf(Nic));
@@ -77,15 +78,15 @@ public class application_update extends AppCompatActivity {
                 else {
                     dbref = FirebaseDatabase.getInstance().getReference();
 
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/full_name").setValue(in_fName.getText().toString().trim());
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/nic_number").setValue(in_id.getText().toString().trim());
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/email").setValue(in_email.getText().toString().trim());
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/phone").setValue(in_phone.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/full_name").setValue(in_fName.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/nic_number").setValue(in_id.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/email").setValue(in_email.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/phone").setValue(in_phone.getText().toString().trim());
 
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/experience").setValue(in_ex.getText().toString().trim());
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/age").setValue(in_age.getText().toString().trim());
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/description").setValue(in_des.getText().toString().trim());
-                    dbref.child("User_Req_Job/"+in_id.getText().toString().trim()+"/qualifications").setValue(in_qua.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/experience").setValue(in_ex.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/age").setValue(in_age.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/description").setValue(in_des.getText().toString().trim());
+                    dbref.child("User_Req_Job/"+ upldP +"/qualifications").setValue(in_qua.getText().toString().trim());
 
                     Toast.makeText(getApplicationContext(), "Successfully Updated", Toast.LENGTH_LONG).show();
 
@@ -112,7 +113,7 @@ public class application_update extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Check You Name", Toast.LENGTH_LONG).show();
 
                         else {
-                            dbref = FirebaseDatabase.getInstance().getReference("User_Req_Job/" + in_id.getText().toString().trim());
+                            dbref = FirebaseDatabase.getInstance().getReference("User_Req_Job/" + upldP);
                             dbref.removeValue();
                             Toast.makeText(getApplicationContext(), "Successfully Deleted", Toast.LENGTH_LONG).show();
 
