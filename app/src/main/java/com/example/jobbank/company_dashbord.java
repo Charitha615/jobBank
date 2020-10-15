@@ -16,7 +16,7 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class company_dashbord extends Fragment {
-    Intent save_intent,add_vacancy_intent,vacancy_intent;
+    Intent save_intent,add_vacancy_intent,vacancy_intent,profile_intent;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,13 +65,13 @@ public class company_dashbord extends Fragment {
         View rootView= inflater.inflate(R.layout.fragment_company_dashbord, container, false);
 
         //View rootView = inflater.inflate(R.layout.about, container, false);
-
-        save_intent = new Intent(getActivity(), company_interested_list.class);
+        profile_intent = new Intent(getActivity(), Company_Profile.class);
+        save_intent = new Intent(getActivity(), company_bookmarked_list.class);
         add_vacancy_intent = new Intent(getActivity(), publish_a_vacancy.class);
         vacancy_intent = new Intent(getActivity(), view_published_vacancies.class);
 
         //////////////////////////////////////////////////////////////////////////
-
+        final Button profile = (Button) rootView.findViewById(R.id.user_profile9);
         final Button save = (Button) rootView.findViewById(R.id.bookmark_btn9);
         final Button add = (Button) rootView.findViewById(R.id.addVacancy_btn);
         final Button vacancy = (Button) rootView.findViewById(R.id.my_applica9);
@@ -94,7 +94,13 @@ public class company_dashbord extends Fragment {
         });
 
         //////////////////////////////////////////////////////////////////////////
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(profile_intent);
 
+            }
+        });
 
 
         //////////////////////////////////////////////////////////////////////////

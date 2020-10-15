@@ -188,6 +188,11 @@ public class user_add_cv extends AppCompatActivity {
 
                     else {
 
+                        int work_ex_in_check = Integer.parseInt(work_ex.getText().toString());
+
+                        String check = validExp(work_ex_in_check);
+
+
                         //saving age as an Integer value
                         int result = Integer.parseInt(age.getText().toString().trim());
                         int ageLimit = Integer.parseInt(AGE_LIMITIN);
@@ -195,8 +200,15 @@ public class user_add_cv extends AppCompatActivity {
                         //Passing a parameter to the CheckAge function
                         String result2 = CheckAge(result, ageLimit);
                         if (result2 == "Invalid") {
-                            Toast.makeText(getApplicationContext(), "Invalid Age", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Age should be less than "+ageLimit, Toast.LENGTH_SHORT).show();
+
+
                         }
+
+                        else if(check == "Invalid")
+                            Toast.makeText(getApplicationContext(), "Invalid Years of Experience", Toast.LENGTH_SHORT).show();
+
+
                         else {
 
                             Intent i = new Intent(getApplicationContext(), user_cv_preview.class);
@@ -251,5 +263,15 @@ public class user_add_cv extends AppCompatActivity {
             return "Valid";
     }
 
+    public static String validExp(int Exp){
+        if(Exp >= 80){
+            //Toast.makeText("Invalid Years Of Experience",Toast.LENGTH_SHORT).show();
+            //Exp = "Invalid Years Of Experience";
+            return "Invalid";
+        }
+        else
+            return "Valid";
+
+    }
 
 }

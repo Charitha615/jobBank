@@ -117,7 +117,7 @@ public class publish_a_vacancy extends AppCompatActivity {
                         int value = Integer.parseInt(ageLimit.getText().toString().trim());
 
                         //Passing a parameter to the validExp function
-                        String result2 = validExp(result);
+                        String result2 = Check_Experience(result);
                         String value2 = CheckAge(value);
 
                         if (result2 == "Invalid"){
@@ -125,7 +125,7 @@ public class publish_a_vacancy extends AppCompatActivity {
                         }
 
                         else if (value2 == "Error"){
-                            Toast.makeText(getApplicationContext(),"Please recheck age limit",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Please recheck age Limit",Toast.LENGTH_SHORT).show();
                         }
                         else {
 
@@ -186,7 +186,7 @@ public class publish_a_vacancy extends AppCompatActivity {
 
 
     //function to check years of experience
-    public static String validExp(int Exp){
+    public static String Check_Experience(int Exp){
         if(Exp >= 80){
             //Toast.makeText("Invalid Years Of Experience",Toast.LENGTH_SHORT).show();
             //Exp = "Invalid Years Of Experience";

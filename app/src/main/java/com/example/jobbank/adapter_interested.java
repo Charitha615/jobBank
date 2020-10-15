@@ -20,7 +20,7 @@ public class adapter_interested extends FirebaseRecyclerAdapter<Interested_Model
         @Override
         protected void onBindViewHolder(@NonNull com.example.jobbank.adapter_interested.appViewHolder holder, int position, @NonNull Interested_Model model) {
             holder.cName.setText(model.getCompanyName());
-            holder.cName.setText(model.getJobTitle());
+            holder.job.setText(model.getJobTitle());
         }
 
         @NonNull

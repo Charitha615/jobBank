@@ -46,6 +46,7 @@
         <activity android:name=".user_register" />
         <activity android:name=".user_login" />
         <activity android:name=".welcome_page" />
+        <activity android:name=".company_profile_edit" />
     </application>
 
 </manifest>

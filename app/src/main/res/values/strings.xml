@@ -71,7 +71,7 @@
 
     <!--  Ayeshka -->
     <string name="companyName">Company Name</string>
-    <string name="viewjobs">Jobs</string>
+    <string name="viewjobs">Vacancies</string>
     <string name="Title">Job Title</string>
     <string name="DescriptionText">Description</string>
     <string name="qualificationText">Qualifications</string>

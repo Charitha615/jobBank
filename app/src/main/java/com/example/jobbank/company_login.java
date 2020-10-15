@@ -32,6 +32,9 @@ public class company_login extends AppCompatActivity {
     EditText email_in,password_in;
     Button Com_signin;
 
+    static company_login INSTANCE;
+    String data;
+
     private FirebaseAuth Login_Company;
     private DatabaseReference refCompanies, database;
     private String firebaseUserId;
@@ -45,7 +48,7 @@ public class company_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_login);
-
+        INSTANCE=this;
         com_signup = findViewById(R.id.com_signuplink4);
 
         Login_Company = FirebaseAuth.getInstance();
@@ -136,7 +139,7 @@ public class company_login extends AppCompatActivity {
 
 
                                             // checkIsAdmin();
-
+                                            data = company;
                                             Intent intent = new Intent(company_login.this, Company_home.class);
 
                                             startActivity(intent);
@@ -174,5 +177,15 @@ public class company_login extends AppCompatActivity {
 
         }
 
+    }
+
+    public static company_login getActivityInstance()
+    {
+        return INSTANCE;
+    }
+
+    public String getData()
+    {
+        return this.data;
     }
 }
