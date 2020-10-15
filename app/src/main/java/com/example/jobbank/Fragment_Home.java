@@ -132,13 +132,7 @@ public class Fragment_Home extends Fragment {
         listener = new my_adapter_home.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                /*Fragment fragment = new Fragment_User_Dashbord();
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.fragment_container, fragment).addToBackStack(null);
-                ft.commit();*/
-               // Paper.book().write("",);
-             //  startActivity(new Intent(getActivity().getApplicationContext(),user_add_cv.class));
+
 
                Intent i = new Intent(getActivity().getApplicationContext(),user_add_cv.class);
 

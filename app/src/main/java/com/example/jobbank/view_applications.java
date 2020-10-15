@@ -39,7 +39,6 @@ public class view_applications extends AppCompatActivity {
         String close = i.getStringExtra("cDate");
         String stts = i.getStringExtra("vStatus");
 
-
         in_position.setText(String.valueOf(pos));
         in_company.setText(String.valueOf(com));
         in_closing.setText(String.valueOf(close));
@@ -54,10 +53,13 @@ public class view_applications extends AppCompatActivity {
         final String age = i.getStringExtra("ageVal");
         final String des = i.getStringExtra("desVal");
         final String qua = i.getStringExtra("quaVal");
-
+        final String upld = i.getStringExtra("uVal");
 
         if (checkStatus(stts)){
             btn_view.setEnabled(true);
+        }
+        else{
+            btn_view.setEnabled(false);
         }
 
         img_back1.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +84,7 @@ public class view_applications extends AppCompatActivity {
                 intent.putExtra("agePass", age);
                 intent.putExtra("desPass", des);
                 intent.putExtra("quaPass", qua);
+                intent.putExtra("upldPass", upld);
 
                 startActivity(intent);
             }

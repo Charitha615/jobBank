@@ -88,7 +88,7 @@
             android:background="@drawable/rounded_corner_white"
             android:paddingLeft="20sp"
             android:paddingTop="10sp"
-            android:paddingRight="115sp"
+            android:paddingRight="10sp"
             android:text="Email"
             android:textAlignment="center"
             android:textColor="@android:color/background_dark"

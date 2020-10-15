@@ -73,7 +73,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:layout_below="@+id/id"
         android:layout_toRightOf="@+id/fNameFill"
         android:layout_marginLeft="40dp"/>
@@ -138,7 +138,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:layout_below="@+id/experienceLabel"
         android:layout_marginLeft="10dp"/>
 
@@ -160,7 +160,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:layout_below="@+id/ageLabel"
         android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/experienceLabel"/>
@@ -201,7 +201,7 @@
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:layout_below="@+id/qualificationLabel"
         android:layout_marginLeft="10dp"/>
 

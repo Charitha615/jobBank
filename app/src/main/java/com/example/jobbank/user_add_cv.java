@@ -15,10 +15,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 
 public class user_add_cv extends AppCompatActivity {
@@ -30,6 +35,9 @@ public class user_add_cv extends AppCompatActivity {
     TextView company_name_textView,job_title_textView,closing_date_textView,qualification_textView,job_type_textView,description_textView,age_limit_textView;
     Button add_cv_btn;
 
+    ImageButton interested;
+    DatabaseReference dbref;
+    long maxid = 0;
 
 
     @Override
@@ -37,7 +45,7 @@ public class user_add_cv extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_add_cv);
 
-
+        interested = findViewById(R.id.star_btn_01);
 
         add_cv_btn = findViewById(R.id.cv_submit_Applicant_btn);
 
@@ -49,6 +57,33 @@ public class user_add_cv extends AppCompatActivity {
         age = findViewById(R.id.cv_age_input);
         description1 = findViewById(R.id.cv_description_input);
         qualification1 = findViewById(R.id.cv_qualification_input);
+        /////////////////////////////////////////////Interested list//////////////////////////////////////////////////////
+
+        dbref = FirebaseDatabase.getInstance().getReference().child("User_Interested");
+
+
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    maxid = (snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        interested.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+            }
+        });
+
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,8 +96,8 @@ public class user_add_cv extends AppCompatActivity {
         description_textView = findViewById(R.id.com_des_);
         age_limit_textView = findViewById(R.id.age_limit);
 
-        age_limit_textView = findViewById(R.id.age_limit);
-        age_limit_textView = findViewById(R.id.age_limit);
+//        age_limit_textView = findViewById(R.id.age_limit);
+//        age_limit_textView = findViewById(R.id.age_limit);
 
         Intent intent = getIntent();
 

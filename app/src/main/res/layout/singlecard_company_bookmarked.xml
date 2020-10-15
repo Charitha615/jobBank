@@ -12,50 +12,52 @@
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView47"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/avatar"/>
-
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/nameBookmarked"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView47"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="2dp"
-                android:text="Sample Name"
-                android:textColor="@android:color/background_dark"
-                android:textSize="15dp"></TextView>
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/positionBookmarked"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="22/08/2020"
-                android:paddingLeft="10dp"
-                android:paddingTop="5dp"
-                android:textSize="11dp"
-                android:textColor="@android:color/background_dark"></TextView></LinearLayout>
+                <TextView
+                    android:id="@+id/nameBookmarked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="2dp"
+                    android:text="Sample Name"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="15dp"></TextView>
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/positionBookmarked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:text="22/08/2020"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="11dp"></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

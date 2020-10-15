@@ -29,6 +29,7 @@ public class myApplicationFragment extends Fragment {
     adapterApplications adapter;
     adapterApplications.RecyclerViewClickListener listener;
     FirebaseRecyclerOptions<modelApplications> options;
+    String data;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,6 +85,7 @@ public class myApplicationFragment extends Fragment {
 
         setOnClickListener();
 
+        data=user_login.getActivityInstance().getData();
         recViewApps = (RecyclerView)getView().findViewById(R.id.appRecView);
         noOfApps = (TextView) getView().findViewById(R.id.numberOfApps);
         viewApps = (Button) getView().findViewById(R.id.view_No_Apps);
@@ -93,16 +95,12 @@ public class myApplicationFragment extends Fragment {
 
         options =
                 new FirebaseRecyclerOptions.Builder<modelApplications>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("User_Req_Job").orderByChild("nic_number").equalTo("14444444V"), modelApplications.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("User_Req_Job").orderByChild("userID").equalTo(data),
+                                modelApplications.class)
                         .build();
 
         adapter = new adapterApplications(options,listener);
         recViewApps.setAdapter(adapter);
-
-
-        //com.example.jobbank.adapterApplications.totalCardsCount)
-
-        //noOfApps.setText(String.valueOf(adapter.getItemCount()));
 
         viewApps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,10 +109,6 @@ public class myApplicationFragment extends Fragment {
             }
         });
     }
-
-    /*public void function(){
-        noOfApps.setText(String.valueOf(com.example.jobbank.adapterApplications.totalCardsCount));
-    }*/
 
     private void setOnClickListener() {
         listener = new adapterApplications.RecyclerViewClickListener() {
@@ -137,6 +131,8 @@ public class myApplicationFragment extends Fragment {
                 intent.putExtra("ageVal", options.getSnapshots().get(position).getAge());
                 intent.putExtra("desVal", options.getSnapshots().get(position).getDescription());
                 intent.putExtra("quaVal", options.getSnapshots().get(position).getQualifications());
+
+                intent.putExtra("uVal", options.getSnapshots().get(position).getUploderID());
 
                 startActivity(intent);
             }

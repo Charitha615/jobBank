@@ -19,13 +19,6 @@ public class adapterApplications extends FirebaseRecyclerAdapter <modelApplicati
 
     private RecyclerViewClickListener listener;
     public static int totalCardsCount;
-    myApplicationFragment mf;
-
- /*   public static RecyclerViewClickListener recyclerViewClickListener;
-
-    public void setOnRecyclerViewClickListener(RecyclerViewClickListener recyclerViewClickListener) {
-        this.recyclerViewClickListener = recyclerViewClickListener;
-    }*/
 
     public adapterApplications(@NonNull FirebaseRecyclerOptions<modelApplications> options, RecyclerViewClickListener listener) {
         super(options);
