@@ -38,7 +38,9 @@ public class user_add_cv extends AppCompatActivity {
     ImageButton interested;
     DatabaseReference dbref;
     long maxid = 0;
+    String data2;
 
+    Interested_Model inter_model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,32 +59,7 @@ public class user_add_cv extends AppCompatActivity {
         age = findViewById(R.id.cv_age_input);
         description1 = findViewById(R.id.cv_description_input);
         qualification1 = findViewById(R.id.cv_qualification_input);
-        /////////////////////////////////////////////Interested list//////////////////////////////////////////////////////
 
-        dbref = FirebaseDatabase.getInstance().getReference().child("User_Interested");
-
-
-        dbref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists())
-                    maxid = (snapshot.getChildrenCount());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        interested.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-            }
-        });
 
 
 
@@ -101,10 +78,10 @@ public class user_add_cv extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String COM_NAMEIN = intent.getStringExtra("COMPANY_NAME");
-        String JOB_TITLEIN = intent.getStringExtra("JOB_TITLE");
+        final String COM_NAMEIN = intent.getStringExtra("COMPANY_NAME");
+        final String JOB_TITLEIN = intent.getStringExtra("JOB_TITLE");
         String QUALIFICATIONIN = intent.getStringExtra("QUALIFICATION1");
-        String AGE_LIMITIN = intent.getStringExtra("AGE_LIMIT");
+        final String AGE_LIMITIN = intent.getStringExtra("AGE_LIMIT");
         String DESCRIPTIONIN = intent.getStringExtra("DESCRIPTION1");
         String CLOSING_DATEIN = intent.getStringExtra("CLOSING_DATE");
         String JOB_TYPEIN = intent.getStringExtra("JOB_TYPE");
@@ -121,6 +98,44 @@ public class user_add_cv extends AppCompatActivity {
 
 
 
+
+
+/////////////////////////////////////////////Interested list//////////////////////////////////////////////////////
+        inter_model = new Interested_Model();
+        dbref = FirebaseDatabase.getInstance().getReference().child("User_Interested");
+
+        data2=user_login.getActivityInstance().getData();
+        //data2 = "4OruyYujvbU3jdOOtlgOwN3pbpp1";
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    maxid = (snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        interested.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                inter_model.setUserID(data2);
+                inter_model.setCompanyName(COM_NAMEIN);
+                inter_model.setJobTitle(JOB_TITLEIN);
+
+                String childd = (String.valueOf(data2 +"_COUNT_"+(maxid+1))); //GET UPLODER ID
+               dbref.child(childd).setValue(inter_model);
+
+
+                Toast.makeText(getApplicationContext(),"Add to Interested List",Toast.LENGTH_LONG).show();
+
+
+            }
+        });
 
 
 
@@ -173,41 +188,62 @@ public class user_add_cv extends AppCompatActivity {
 
                     else {
 
-                        Intent i = new Intent(getApplicationContext(), user_cv_preview.class);
+                        int work_ex_in_check = Integer.parseInt(work_ex.getText().toString());
 
-                        first_name_in = first_name.getText().toString();
-                        last_name_in = last_name.getText().toString();
-                        email_in = email.getText().toString();
-                        mobile_in = mobile.getText().toString();
-                        work_ex_in = work_ex.getText().toString();
-                        age_in = age.getText().toString();
-                        description_in = description1.getText().toString();
-                        qualification_in = qualification1.getText().toString();
-                        company_name_in = company_name_textView.getText().toString();
-                        com_title_in = job_title_textView.getText().toString();
-                        closing_date_in = closing_date_textView.getText().toString();
+                        String check = validExp(work_ex_in_check);
 
 
+                        //saving age as an Integer value
+                        int result = Integer.parseInt(age.getText().toString().trim());
+                        int ageLimit = Integer.parseInt(AGE_LIMITIN);
+
+                        //Passing a parameter to the CheckAge function
+                        String result2 = CheckAge(result, ageLimit);
+                        if (result2 == "Invalid") {
+                            Toast.makeText(getApplicationContext(), "Age should be less than "+ageLimit, Toast.LENGTH_SHORT).show();
 
 
-                        i.putExtra("FIRST_NAME", first_name_in); //using put Extra
-                        i.putExtra("LAST_NAME", last_name_in); //using put Extra
-                        i.putExtra("EMAIL", email_in);
-                        i.putExtra("MOBILE", mobile_in);
-                        i.putExtra("WORK_EX", work_ex_in);
-                        i.putExtra("AGE", age_in);
-                        i.putExtra("DESCRIPTION14", description_in);
-                        i.putExtra("QUALIFICATION14", qualification_in);
-                        i.putExtra("COM_NAME", company_name_in);
-                        i.putExtra("COM_ADDRESS", com_title_in);
-                        i.putExtra("CLOSING_DATE", closing_date_in);
+                        }
+
+                        else if(check == "Invalid")
+                            Toast.makeText(getApplicationContext(), "Invalid Years of Experience", Toast.LENGTH_SHORT).show();
 
 
-                        startActivity(i);
+                        else {
+
+                            Intent i = new Intent(getApplicationContext(), user_cv_preview.class);
+
+                            first_name_in = first_name.getText().toString();
+                            last_name_in = last_name.getText().toString();
+                            email_in = email.getText().toString();
+                            mobile_in = mobile.getText().toString();
+                            work_ex_in = work_ex.getText().toString();
+                            age_in = age.getText().toString();
+                            description_in = description1.getText().toString();
+                            qualification_in = qualification1.getText().toString();
+                            company_name_in = company_name_textView.getText().toString();
+                            com_title_in = job_title_textView.getText().toString();
+                            closing_date_in = closing_date_textView.getText().toString();
+
+
+                            i.putExtra("FIRST_NAME", first_name_in); //using put Extra
+                            i.putExtra("LAST_NAME", last_name_in); //using put Extra
+                            i.putExtra("EMAIL", email_in);
+                            i.putExtra("MOBILE", mobile_in);
+                            i.putExtra("WORK_EX", work_ex_in);
+                            i.putExtra("AGE", age_in);
+                            i.putExtra("DESCRIPTION14", description_in);
+                            i.putExtra("QUALIFICATION14", qualification_in);
+                            i.putExtra("COM_NAME", company_name_in);
+                            i.putExtra("COM_ADDRESS", com_title_in);
+                            i.putExtra("CLOSING_DATE", closing_date_in);
+
+
+                            startActivity(i);
+
+                        }
 
                     }
-
-
                 }
                 catch (NumberFormatException e)
                 {
@@ -218,6 +254,24 @@ public class user_add_cv extends AppCompatActivity {
 
 
     }
+    //checking whether the age is greater than the age limit using a function
+   public static String CheckAge(int age, int limit){
+        if(age > limit){
+            return "Invalid";
+        }
+        else
+            return "Valid";
+    }
 
+    public static String validExp(int Exp){
+        if(Exp >= 80){
+            //Toast.makeText("Invalid Years Of Experience",Toast.LENGTH_SHORT).show();
+            //Exp = "Invalid Years Of Experience";
+            return "Invalid";
+        }
+        else
+            return "Valid";
+
+    }
 
 }
