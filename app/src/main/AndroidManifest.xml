@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jobbank" >
+    package="com.example.jobbank">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -11,8 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".company_profile_edit" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".User_Interested_list"></activity>
+        <activity android:name=".Company_Profile" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,17 +22,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".Company_home" />
-        <activity android:name=".Company_Profile" >
-
-        </activity>
-        <activity android:name=".user_home" />
         <activity android:name=".user_account" />
         <activity android:name=".pub_a_vacancy" />
         <activity android:name=".publish_a_vacancy" />
         <activity android:name=".company_bookmarked_list" />
         <activity android:name=".company_interested_list" />
         <activity android:name=".edit_vacancy" />
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".user_home" />
         <activity android:name=".view_published_vacancies" />
         <activity android:name=".view_vacancy" />
         <activity android:name=".examine_applicants" />
