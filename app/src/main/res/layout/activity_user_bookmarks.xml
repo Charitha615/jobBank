@@ -44,7 +44,7 @@
     <LinearLayout
         android:id="@+id/body"
         android:layout_width="match_parent"
-        android:layout_height="410dp"
+        android:layout_height="350dp"
         android:orientation="vertical"
         android:layout_below="@+id/upper">
 
@@ -56,41 +56,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"/>
 
-        <TextView
-            android:id="@+id/each_one1"
-            style="@style/EachBookmark"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_corner_white"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false" />
-
-        <TextView
-            android:id="@+id/each_one2"
-            android:background="@drawable/rounded_corner_white"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            style = "@style/EachBookmark"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"/>
-
-        <TextView
-            android:id="@+id/each_one3"
-            android:background="@drawable/rounded_corner_white"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            style = "@style/EachBookmark"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"/>
-
-        <TextView
-            android:id="@+id/each_one4"
-            android:background="@drawable/rounded_corner_white"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            style = "@style/EachBookmark"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookmarksRecView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -105,7 +74,7 @@
         android:layout_marginTop="60dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"

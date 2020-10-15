@@ -13,14 +13,17 @@ public class modelApplications {
     String age;
     String description;
     String qualifications;
+    String userID;
+    String uploderID;
 
 
     public modelApplications() {
 
     }
 
+
     public modelApplications(String position, String company, String closingDate, String status, String full_name, String nic_number, String email, String phone,
-                             String experience, String age, String description, String qualifications) {
+                             String experience, String age, String description, String qualifications, String userID, String uploderID) {
         this.position = position;
         this.company = company;
         this.closingDate = closingDate;
@@ -33,6 +36,8 @@ public class modelApplications {
         this.age = age;
         this.description = description;
         this.qualifications = qualifications;
+        this.userID = userID;
+        this.uploderID = uploderID;
     }
 
     public String getPosition() {
@@ -129,5 +134,21 @@ public class modelApplications {
 
     public void setQualifications(String qualifications) {
         this.qualifications = qualifications;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public String getUploderID() {
+        return uploderID;
+    }
+
+    public void setUploderID(String uploderID) {
+        this.uploderID = uploderID;
     }
 }

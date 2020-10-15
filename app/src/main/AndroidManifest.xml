@@ -12,10 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".Company_Profile"></activity>
-
-
+        <activity android:name=".user_bookmarks" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +36,7 @@
         <activity android:name=".user_account_edit" />
         <activity android:name=".application_update" />
         <activity android:name=".view_applications" />
-        <activity android:name=".user_bookmarks" />
+        <activity android:name=".Company_Profile" />
         <activity android:name=".user_add_cv" />
         <activity android:name=".user_cv_preview" />
         <activity android:name=".com_register_2" />
@@ -49,6 +46,5 @@
         <activity android:name=".user_login" />
         <activity android:name=".welcome_page" />
     </application>
-
 
 </manifest>
