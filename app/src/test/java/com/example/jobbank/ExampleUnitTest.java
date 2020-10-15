@@ -14,6 +14,9 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     view_applications v;
     examine_applicants e;
+
+    publish_a_vacancy p;
+
     @Test
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
@@ -49,6 +52,28 @@ public class ExampleUnitTest {
     public void status_is_correct_rejected(){
         String status = examine_applicants.setStatus(9);
         assertEquals("Rejected", status);
+    }
+
+
+    //Ayeshka's Testing Part
+    @Test
+    public void YearsOfExp_NoOfDigits(){
+        String Check_Years = publish_a_vacancy.validExp(115);
+        assertEquals("Invalid",Check_Years);
+    }
+
+    @Test
+    public void CheckAge_WhenPublishing(){
+        String Age1 = publish_a_vacancy.CheckAge(80);
+        assertEquals("Error",Age1);
+    }
+
+
+    //Charitha's Testing
+    @Test
+    public void AgeCheck(){
+        String Check_age = user_add_cv.CheckAge(100, 100);
+        assertEquals("Invalid", Check_age);
     }
 
 }

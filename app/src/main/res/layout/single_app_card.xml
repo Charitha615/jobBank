@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     android:elevation="5dp"
@@ -11,11 +11,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_gravity="left"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="#69009688">
+        android:background="@drawable/background">
 
         <LinearLayout
             android:id="@+id/li"

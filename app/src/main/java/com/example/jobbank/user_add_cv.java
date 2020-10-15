@@ -81,7 +81,7 @@ public class user_add_cv extends AppCompatActivity {
         final String COM_NAMEIN = intent.getStringExtra("COMPANY_NAME");
         final String JOB_TITLEIN = intent.getStringExtra("JOB_TITLE");
         String QUALIFICATIONIN = intent.getStringExtra("QUALIFICATION1");
-        String AGE_LIMITIN = intent.getStringExtra("AGE_LIMIT");
+        final String AGE_LIMITIN = intent.getStringExtra("AGE_LIMIT");
         String DESCRIPTIONIN = intent.getStringExtra("DESCRIPTION1");
         String CLOSING_DATEIN = intent.getStringExtra("CLOSING_DATE");
         String JOB_TYPEIN = intent.getStringExtra("JOB_TYPE");
@@ -188,41 +188,50 @@ public class user_add_cv extends AppCompatActivity {
 
                     else {
 
-                        Intent i = new Intent(getApplicationContext(), user_cv_preview.class);
+                        //saving age as an Integer value
+                        int result = Integer.parseInt(age.getText().toString().trim());
+                        int ageLimit = Integer.parseInt(AGE_LIMITIN);
 
-                        first_name_in = first_name.getText().toString();
-                        last_name_in = last_name.getText().toString();
-                        email_in = email.getText().toString();
-                        mobile_in = mobile.getText().toString();
-                        work_ex_in = work_ex.getText().toString();
-                        age_in = age.getText().toString();
-                        description_in = description1.getText().toString();
-                        qualification_in = qualification1.getText().toString();
-                        company_name_in = company_name_textView.getText().toString();
-                        com_title_in = job_title_textView.getText().toString();
-                        closing_date_in = closing_date_textView.getText().toString();
+                        //Passing a parameter to the CheckAge function
+                        String result2 = CheckAge(result, ageLimit);
+                        if (result2 == "Invalid") {
+                            Toast.makeText(getApplicationContext(), "Invalid Age", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
 
+                            Intent i = new Intent(getApplicationContext(), user_cv_preview.class);
 
-
-
-                        i.putExtra("FIRST_NAME", first_name_in); //using put Extra
-                        i.putExtra("LAST_NAME", last_name_in); //using put Extra
-                        i.putExtra("EMAIL", email_in);
-                        i.putExtra("MOBILE", mobile_in);
-                        i.putExtra("WORK_EX", work_ex_in);
-                        i.putExtra("AGE", age_in);
-                        i.putExtra("DESCRIPTION14", description_in);
-                        i.putExtra("QUALIFICATION14", qualification_in);
-                        i.putExtra("COM_NAME", company_name_in);
-                        i.putExtra("COM_ADDRESS", com_title_in);
-                        i.putExtra("CLOSING_DATE", closing_date_in);
+                            first_name_in = first_name.getText().toString();
+                            last_name_in = last_name.getText().toString();
+                            email_in = email.getText().toString();
+                            mobile_in = mobile.getText().toString();
+                            work_ex_in = work_ex.getText().toString();
+                            age_in = age.getText().toString();
+                            description_in = description1.getText().toString();
+                            qualification_in = qualification1.getText().toString();
+                            company_name_in = company_name_textView.getText().toString();
+                            com_title_in = job_title_textView.getText().toString();
+                            closing_date_in = closing_date_textView.getText().toString();
 
 
-                        startActivity(i);
+                            i.putExtra("FIRST_NAME", first_name_in); //using put Extra
+                            i.putExtra("LAST_NAME", last_name_in); //using put Extra
+                            i.putExtra("EMAIL", email_in);
+                            i.putExtra("MOBILE", mobile_in);
+                            i.putExtra("WORK_EX", work_ex_in);
+                            i.putExtra("AGE", age_in);
+                            i.putExtra("DESCRIPTION14", description_in);
+                            i.putExtra("QUALIFICATION14", qualification_in);
+                            i.putExtra("COM_NAME", company_name_in);
+                            i.putExtra("COM_ADDRESS", com_title_in);
+                            i.putExtra("CLOSING_DATE", closing_date_in);
+
+
+                            startActivity(i);
+
+                        }
 
                     }
-
-
                 }
                 catch (NumberFormatException e)
                 {
@@ -232,6 +241,14 @@ public class user_add_cv extends AppCompatActivity {
         });
 
 
+    }
+    //checking whether the age is greater than the age limit using a function
+   public static String CheckAge(int age, int limit){
+        if(age > limit){
+            return "Invalid";
+        }
+        else
+            return "Valid";
     }
 
 
