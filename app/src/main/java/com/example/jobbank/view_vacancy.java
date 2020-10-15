@@ -93,6 +93,8 @@ public class view_vacancy extends AppCompatActivity {
                 i.putExtra("vID", vID);
 
 
+
+
                 startActivity(i);
 
 
@@ -125,7 +127,7 @@ public class view_vacancy extends AppCompatActivity {
             public void onClick(View view) {
 
                 final AlertDialog.Builder builder = new AlertDialog.Builder(view_vacancy.this);
-                builder.setMessage("Do you really want to DELETE the application?")
+                builder.setMessage("Do you really want to DELETE the vacancy?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
